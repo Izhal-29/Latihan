@@ -9,3 +9,13 @@ for (var angkot = 1; angkot <= jmlAngkot; angkot++) {
     console.log('Angkot No. ' + angkot + ' sedang tidak beroperasi.')
   }
 }
+// Cara lain :
+// for (var noAngkot = 1; noAngkot <= jmlAngkot; noAngkot++){
+//   if (noAngkot === 5 || noAngkot === 8 || noAngkot === 10){
+//     console.log('Angkot No. ' + noAngkot + ' sedang lembur');
+//   } else if (noAngkot <= angkotBeroperasi){
+//     console.log('Angkot No. ' + noAngkot + ' beroperasi dengan baik');
+//   } else {
+//     console.log('Angkot No. ' + noAngkot + ' sedang tidak beroperasi');
+//   }
+// }

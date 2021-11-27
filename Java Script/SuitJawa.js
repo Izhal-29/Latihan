@@ -43,3 +43,5 @@ while (lagi){
 	// Konfrmasi
 	lagi = confirm ('Apakah Anda mau mencobanya lagi ?');
 }
+
+alert ("Terima Kasiih Sudah Bermain");

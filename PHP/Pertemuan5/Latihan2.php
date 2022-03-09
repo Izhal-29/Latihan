@@ -54,7 +54,7 @@ $angka = [3,2,15,20,11,77,89,8, 1, 45];
     <br><br>
     <div class="clear"></div>
 
-  <h1>Mengunakan foreach</h1>
+  <h1>Mengunakan foreach pengulangan khusus untuk array</h1>
   <?php foreach($angka as $a) { ?>
     <div class="kotak"><?php echo $a; ?></div>
   <?php } ?>

@@ -27,6 +27,7 @@ $angka = [3,2,15,20,11,77,89,8, 1, 45];
   </style>
 </head>
 <body>
+
   <h1>Mengunakan for</h1>
   <?php for( $i = 0; $i < count($angka); $i++) { ?>
     <div class="kotak"><?php echo $angka [$i]; ?></div>
@@ -34,6 +35,24 @@ $angka = [3,2,15,20,11,77,89,8, 1, 45];
   
   <br><br>
   <div class="clear"></div>
+
+  <h1>Mengunakan While</h1>
+  <?php $h = 0; ?>
+  <?php while($h < count($angka)) { ?>
+    <div class="kotak"><?php echo $angka [$h]; ?></div>
+  <?php $h++; } ?>
+
+    <br><br>
+    <div class="clear"></div>
+
+  <h1>Mengunakan do While</h1>
+  <?php $g = 0; ?>
+  <?php do { ?>
+    <div class="kotak"><?php echo $angka [$g]; ?></div>
+  <?php $g++; } while ($g < count($angka)) ?>
+  
+    <br><br>
+    <div class="clear"></div>
 
   <h1>Mengunakan foreach</h1>
   <?php foreach($angka as $a) { ?>
@@ -46,5 +65,6 @@ $angka = [3,2,15,20,11,77,89,8, 1, 45];
   <?php foreach($angka as $a) : ?>
     <div class="kotak"><?= $a; ?></div>
   <?php endforeach; ?>
+  
 </body>
 </html>

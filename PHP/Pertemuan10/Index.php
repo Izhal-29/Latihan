@@ -1,8 +1,8 @@
 <?php 
 
   require "function.php"; // mengambil data dari function.php
-  $mahasiswa = mhs("SELECT * FROM mahasiswa");
-  
+  $mahasiswa = query("SELECT * FROM mahasiswa");
+
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +15,7 @@
 </head>
 <body>
   <h1>Daftar Mahasiswa</h1>
-
+  <a href="Tambah.php">Tambah Mahasiswa</a>
   <table border="1" cellpaddding="10" cellspacing="0">
     <tr>
       <th>No.</th>
@@ -27,21 +27,21 @@
       <th>Jurusan</th>
     </tr>
     <?php $i=1;
-      foreach ($mahasiswa as $mhs ) :
+      foreach ($mahasiswa as $row ) :
     ?>
     <tr>
       <td><?= $i; ?></td>
       <td>
         <a href="">Ubah</a> |
-        <a href="">Hapus</a>
+        <a href="Hapus.php?id=<?= $row["id"]; ?>" onclick="return confirm('Yakin ingin menghapus Data');">Hapus</a> // ID dirikirmkan lewat URL
       </td>
       <td>
-        <img src="img/<?= $mhs["gambar"]; ?>" alt="">
+        <img src="img/<?= $row["gambar"]; ?>" alt="">
       </td>
-      <td><?= $mhs ["nrp"]; ?></td>
-      <td><?= $mhs ["nama"]; ?></td>
-      <td><?= $mhs ["email"]; ?></td>
-      <td><?= $mhs ["jurusan"]; ?></td>
+      <td><?= $row ["nrp"]; ?></td>
+      <td><?= $row ["nama"]; ?></td>
+      <td><?= $row ["email"]; ?></td>
+      <td><?= $row ["jurusan"]; ?></td>
     </tr>
     <?php 
       $i++;

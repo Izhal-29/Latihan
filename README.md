@@ -31,3 +31,12 @@ Latihan Pemrogramanku
     "intelephense.completion.fullyQualifyGlobalConstantsAndFunctions": true,
     "editor.cursorBlinking": "expand",
 }
+
+//settingan Snippet html.json VS Code
+"php":{
+		"prefix":"php",
+		"body":[
+			"<?php $1 ?>"
+		],
+		"description":"php lag"
+	}

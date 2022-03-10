@@ -2,7 +2,9 @@
 // koneksi Database
   $conn = mysqli_connect("localhost", "root", "","phpdasar");
 // Mengambil data dari tabel / Query data tabel
-  $result = mysqli_query($conn,"SELECT * FROM mahasiswa");
+  $result = mysqli_query($conn, "SELECT * FROM mahasiswa");
+  // parameter pertama string koneksi ke databasenya
+  // parameter kedua query-nya / datanya
 
 // ambil data (fetch) Tabel dari object result
 // mysqli_fetch_row() ---> untuk mengembalikan array numerik
@@ -13,11 +15,11 @@
   // $mhs = mysqli_fetch_assoc($result);
   // var_dump($mhs["jurusan"]);
 
-// mysqli_fetch_array() ---> untuk mengembalikan array numerik dan  associative tapi double
+// mysqli_fetch_array() ---> untuk mengembalikan array numerik dan  associative tapi data yang disajikan/ditampilkan double
   // $mhs = mysqli_fetch_array($result);
   // var_dump($mhs);
 
-// mysqli_fetch_object() ---> untuk mengembalikan 
+// mysqli_fetch_object() ---> untuk mengembalikan data object
   // $mhs = mysqli_fetch_object($result);
   // var_dump($mhs->email);
 
@@ -28,6 +30,8 @@
   //   echo "Koneksi Database Berhasil";
   // }
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,14 +65,14 @@
       <td>
         <img src="img/<?= $row["gambar"]; ?>" alt="">
       </td>
-      <td><?php echo $row ["nrp"]; ?></td>
-      <td><?php echo $row ["nama"]; ?></td>
-      <td><?php echo $row ["email"]; ?></td>
-      <td><?php echo $row ["jurusan"]; ?></td>
+      <td><?= $row ["nrp"]; ?></td>
+      <td><?= $row ["nama"]; ?></td>
+      <td><?= $row ["email"]; ?></td>
+      <td><?= $row ["jurusan"]; ?></td>
     </tr>
     <?php 
       $i++;
-     endwhile; 
+      endwhile; 
     ?>
   </table>
 </body>

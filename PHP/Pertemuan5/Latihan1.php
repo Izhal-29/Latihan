@@ -37,4 +37,9 @@ echo "<br><br>";
 $hari[] = "Minggu";
 echo "<br>";
 var_dump($hari);
+
+$bulan[] = "Baru";
+echo "<br>";
+var_dump($bulan);
+
 ?>

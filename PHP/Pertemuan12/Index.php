@@ -32,8 +32,9 @@
     <tr>
       <td><?= $i; ?></td>
       <td>
-        <a href="">Ubah</a> |
-        <a href="Hapus.php?id=<?= $row["id"]; ?>" onclick="return confirm('Yakin ingin menghapus Data');">Hapus</a>   <!-- ID dirikirmkan lewat URL -->
+        <a href="Update.php?id=<?= $row["id"]; ?>">Ubah</a> | <!-- ID dirikirmkan lewat URL -->
+        <a href="Hapus.php?id=<?= $row["id"]; ?>" onclick="return confirm('Yakin ingin menghapus Data');">Hapus</a> <!-- ID dirikirmkan lewat URL -->
+        
       </td>
       <td>
         <img src="img/<?= $row["gambar"]; ?>" alt="">

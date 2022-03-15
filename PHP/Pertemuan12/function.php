@@ -73,8 +73,9 @@
               email LIKE '%$keyword%' OR
               jurusan LIKE '%$keyword%'
              ";
-             // pakai LIKE istilahnya wildcard dan ditambahkan % variabel
+             // pakai LIKE istilahnya wildcard dan ditambahkan % diparameternya, jika lebih dari satu field tambahkan OR 
 
     return query($query);
+    // kembalikan hasilnya berupa array associative
   }
 ?>

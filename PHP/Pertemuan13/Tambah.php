@@ -27,18 +27,19 @@
     // Cara Baru
     require 'function.php'; // mengambil data dari function.php
     if(isset($_POST["submit"])){// jika $_POST yang keynya Submit / tombol submit di pencet
+    
       if(tambah($_POST) > 0){
       // mengambil nilai dari fungsi mysqli_affected_rows jika datanya bertambah, diubah, dihapus maka menghasilkan 1 jika error maka menghasilkan -1
         echo "
               <script>
-                alert ('Data Berhasil ditambahakan!');
+                alert ('Data Berhasil ditambahkan!');
                 document.location.href='Index.php'
               </script>
              ";
       } else {
         echo "
               <script>
-               alert ('Data Gagal ditambahakan!');
+               alert ('Data Gagal ditambahkan!');
                 document.location.href='Index.php'
               </script>
              ";
@@ -56,7 +57,13 @@
 </head>
 <body>
   <h1>Tambah Data Mahasiswa</h1>
-  <form action="" method="post">
+  <form action="" method="post" enctype="multipart/form-data">
+  <input type="hidden" name="id" value="<?= $mhs ["id"]; ?>">
+     <!-- 
+      method=POST/GET untuk mengolah data string ===> $_POST
+
+     enctype="multipart/form-data" untuk dapat mengelolah file ===> $_FILES
+    -->
     <ul>
       <li>
         <label for="nrp"> NRP : </label>
@@ -76,7 +83,25 @@
       </li>
       <li>
         <label for="gambar"> Foto : </label>
-        <input type="text" name="gambar" id="gambar" required>
+        <input type="file" name="gambar" id="gambar">
+        <!-- 
+          isi dari $_FILES mempunyai array associative 2 dimensi
+          array(1) {
+            ["gambar"]=>
+            array(5) {
+              ["name"]=>
+              string(8) "mika.jpg"
+              ["type"]=>
+              string(10) "image/jpeg"
+              ["tmp_name"]=>
+              string(24) "C:\xampp\tmp\php2579.tmp"
+              ["error"]=>
+              int(0)
+              ["size"]=>
+              int(15223)
+            }
+          }
+       -->
       </li>
       <li>
         <button type="submit" name="submit"> Tambah Data </button>

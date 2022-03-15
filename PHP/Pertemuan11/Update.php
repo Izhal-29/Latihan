@@ -44,6 +44,7 @@
   <h1>Update Data Mahasiswa</h1>
   <form action="" method="post">
     <input type="hidden" name="id" value="<?= $mhs ["id"]; ?>">
+    <!-- type="hidden" untuk menyembunyikan input -->
     <ul>
       <li>
         <label for="nrp"> NRP : </label>

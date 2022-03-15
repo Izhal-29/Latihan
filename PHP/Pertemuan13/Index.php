@@ -5,8 +5,9 @@
   // ORDER BY id DESC/ASC untuk mengurutkan data yang tampilkan ASC (dari kecil kebesar) DESC (Dari besar ke kecil)
 
   //tombol cari di tekan
-  if (isset ($_POST["cari"])){
+  if (isset ($_POST["cari"])){ 
     $mahasiswa = cari($_POST["keyword"]);
+    // kita akan mencari data sesuai dengan keyword yang dimasukkan
   }
 
 ?>
@@ -22,10 +23,16 @@
 <body>
   <h1>Daftar Mahasiswa</h1>
   <a href="Tambah.php">Tambah Mahasiswa</a>
+  <br><br>
   <form action="" method="POST">
     <input type="text" name="keyword" size="40" placeholder="Masukkan Keyword Pencarian.." autocomplete="off" autofocus>
+    <!-- 
+      autocomplete ==> untuk mengatur history
+      autofocus ==> untuk mengaktifkan langsung ketika URL dibuka
+     -->
     <button type="submit" name="cari">Cari</button>
   </form>
+  <br>
   <table border="1" cellpaddding="10" cellspacing="0">
     <tr>
       <th>No.</th>

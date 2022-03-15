@@ -42,8 +42,13 @@
 </head>
 <body>
   <h1>Update Data Mahasiswa</h1>
-  <form action="" method="post">
+  <form action="" method="post" enctype="multipart/form-data">
     <input type="hidden" name="id" value="<?= $mhs ["id"]; ?>">
+    <input type="hidden" name="fotoLama" value="<?= $mhs ["gambar"]; ?>">
+    <!-- 
+      type="hidden" untuk menyembunyikan input
+      input name=fotoLama, jadi kalau user tidak menganti gambar maka fotolama yang akan dipakai tetapi jika user menganti gambar maka akan diganti dengan gambar baru 
+    -->
     <ul>
       <li>
         <label for="nrp"> NRP : </label>
@@ -62,8 +67,9 @@
         <input type="text" name="jurusan" id="jurusan" value="<?= $mhs ["jurusan"]; ?>" required>
       </li>
       <li>
-        <label for="gambar"> Foto : </label>
-        <input type="text" name="gambar" id="gambar" value="<?= $mhs ["gambar"]; ?>" required>
+        <label for="gambar"> Foto : </label><br>
+        <img src="img/<?= $mhs ["gambar"] ?>" alt="Foto" witdh="100" height="100"><br>
+        <input type="file" name="gambar" id="gambar">
       </li>
       <li>
         <button type="submit" name="submit"> Update Data </button>

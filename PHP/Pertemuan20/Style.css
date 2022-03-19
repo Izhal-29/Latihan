@@ -20,3 +20,12 @@ button{
 button:hover{
   background-color: rgb(177, 233, 175);
 }
+
+.loader{
+  width: 100px;
+  position: absolute;
+  top: 118px;
+  left : 290px;
+  z-index: -1;
+  display: none;
+}

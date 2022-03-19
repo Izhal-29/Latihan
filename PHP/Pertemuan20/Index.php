@@ -24,13 +24,19 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <title>Halaman Admin</title>
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/Script.js"></script>
 </head>
 <body>
+
   <a href="logout.php">Logout</a>
   <h1>Daftar Mahasiswa</h1>
   <a href="Tambah.php">Tambah Mahasiswa</a>
+  
   <br><br>
+
   <form action="" method="POST">
     <input type="text" name="keyword" size="40" placeholder="Masukkan Keyword Pencarian.." autocomplete="off" id="keyword" autofocus>
     <!-- 
@@ -38,8 +44,11 @@
       autofocus ==> untuk mengaktifkan langsung ketika URL dibuka
      -->
     <button type="submit" name="cari" id="tombol-cari">Cari</button>
+    <img src="img/loading.gif" class="loader" alt="">
   </form>
+
   <br>
+
   <div id="container">
     <table border="1" cellpaddding="10" cellspacing="0">
       <tr>
@@ -75,8 +84,6 @@
       ?>
     </table>
   </div>
-  <script src="js/Script.js">
-
-  </script>
+  
 </body>
 </html>

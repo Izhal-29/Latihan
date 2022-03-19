@@ -1,4 +1,6 @@
 <?php 
+usleep(500000); // setengah detik
+//sleep(1); // untuk nidurin dulu  agar terlihat loadingnya jgn digunakan karena untuk simulasi aja karena akan memperlambat
   require '../function.php';
   $keyword = $_GET["keyword"];
   $query = "SELECT * FROM mahasiswa 
@@ -42,4 +44,4 @@
         $i++;
         endforeach; 
       ?>
-  </table>
+  </table

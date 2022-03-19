@@ -50,6 +50,7 @@
   <title>Halaman Admin</title>
 </head>
 <body>
+  <h1>Tugas anda untuk menyesuaikan pagination dengan searching</h1>
   <a href="logout.php">Logout</a>
   <h1>Daftar Mahasiswa</h1>
   <a href="Tambah.php">Tambah Mahasiswa</a>

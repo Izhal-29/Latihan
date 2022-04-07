@@ -1,0 +1,191 @@
+body{
+  background-color: rgb(243, 243, 243);
+}
+
+
+.Container{
+  margin: 50px 25% 50px 25%;
+  position: relative;
+  /* background-color: #17a8f8; */
+}
+
+.Judul{
+  font-family: vinyl;
+}
+
+.hp{
+  border-radius: 10px;
+  float: left;
+  margin-right: 20px;
+}
+
+.hp:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.kotak{
+  position: relative;
+}
+
+.kotak:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.kotak1{
+  background-color: rgb(255, 255, 255);
+  margin: 10px 45%;
+  width: 45%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #dbdbdb;
+  text-align: center;
+}
+
+.input  {
+  margin: 0 auto;
+  margin-top: 5px;
+  width: 65%;
+  height: 40px;
+  padding: 5px 20px 5px 20px;
+  background-color: rgb(240, 240, 240);
+  border: rgb(221, 221, 221);
+  border-style: solid;
+  border-width: 1px;
+  border-color: #dbdbdb;
+  border-radius: 5px;
+}
+
+.login{
+  width: 75%;
+  height: 40px;
+  padding: 5px 20px 5px 20px;
+  border: rgb(53, 134, 255);
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color:#b2dffc;
+  text-align: center;
+  font-weight: bold;
+}
+
+.garis{
+  width:75%;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  border-color: #dbdbdb;
+}
+
+.or{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: absolute;
+  background-color:  white;
+  padding: 10px 20px 10px 20px;
+  top: 43%;
+  left: 64.5%;
+  border-radius: 50%;
+}
+
+.facebook{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.fb{
+  position: absolute;
+  left: 28%;
+}
+
+.logfb{
+  position: absolute;
+  float: right;
+  top: 15%;
+  bottom: 50%;
+  right: 28%;
+  text-decoration: none;
+  font-weight: 500;
+  color:#385185;
+}
+
+.forgotpass{
+  text-decoration: none;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: small;
+  color: #00376b;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.kotak2{
+  background-color: rgb(255, 255, 255);
+  margin: 10px 45%;
+  width: 45%;
+  height: 80px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #dbdbdb;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.signup{
+  font-weight: bolder;
+  text-decoration: none;
+  margin-left: 20px;
+  color: #17a8f8;
+}
+
+.kotak3{
+  margin: 0px 45%;
+  width: 45%;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dha {
+  display: block;
+  margin-top: 7%;
+}
+
+.ag{
+  width: 200px;
+}
+
+.footer{
+  margin: 80px auto 0 0;
+  width: 90%;
+  /* background-color: red; */
+  display: block;
+  text-align: center;
+}
+
+.footer a{
+  text-decoration: none;
+  color: #8a8a8a;
+  margin: 5px;
+}
+
+.f1 {
+  margin-bottom: 5px;
+}
+
+.f2{
+  margin-bottom: 20px;
+
+}
+
+.f3{
+  margin-bottom: 20px;
+
+}
+
+@font-face{
+  font-family:"vinyl";
+  src: url("font/blue_vinyl_regular_ps_ot.otf");
+}

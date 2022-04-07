@@ -1,0 +1,61 @@
+body{
+  font-family: 'century gothic';
+}
+
+.link{
+  text-align: center;
+}
+
+.link .menu{
+  text-decoration: none;
+  margin: 10px 20px;
+  color: black;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.slider{
+  height: 300px;
+  background-color:#d3bdd1 ;
+  text-align: center;
+  position: relative;
+} 
+
+.header{
+  position: absolute;
+  width: 100%;
+  top: 35%;
+  /* background-color: red; */
+}
+
+.side{
+  background-color:#969494 ;
+  width: 100%;
+  height: 300px;
+  display: block;
+  text-align: center;
+  position: relative;
+}
+
+.sidebar {
+  position: absolute;
+  width: 100%;
+  top: 35%;
+}
+
+.isi{
+  padding:40px 200px;
+  text-align: justify;
+}
+
+.line{
+  background-color: black;
+  width: 100px;
+  height: 2px;
+}
+
+.footer{
+  background-color:#d3bdd1 ;
+  font-size: 24px;
+  font-weight: bold;
+}

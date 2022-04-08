@@ -1,0 +1,66 @@
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.nav li{
+  margin-left: 20px;
+}
+
+li .glyphicon{
+  color: rgb(0, 0, 0);
+}
+
+.headerku .navbar{
+  background: white;
+  padding-bottom: 20px;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.nav li{
+  margin-top: 15px;
+}
+
+.nav li button{
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+}
+
+.slide .carousel-inner{
+  margin-top: 0px;
+  background-color: aqua;
+}
+.carousel-caption{
+  padding-bottom: 20%;
+}
+
+.about{
+  margin-bottom: 100px;
+}
+
+.about .container-fluid{
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.col-lg-4{
+  position: relative;
+  padding: 10% 5% 0% 10%;
+  /* background: rgb(114, 114, 114); */
+}
+
+.col-lg-4 img{
+  position: absolute;
+  left:-6%;
+  top: 50%;
+  height: 25%; 
+}
+
+.col-lg-4 i{
+  position: absolute;
+  color: #4db7fe;
+  font-size: 450%;
+  left: -2%;
+  top: 50%;
+}

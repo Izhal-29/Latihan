@@ -1,0 +1,12 @@
+[
+  {
+    "nama" : "Pelita",
+    "kelas" : "Node",
+    "umur" : "20"
+  },
+  {
+    "nama" : "Najmina",
+    "kelas" : "Laravel",
+    "umur" : "23"
+  }
+]

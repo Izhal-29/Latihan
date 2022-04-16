@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Function Javascript</title>
+</head>
+<body>
+  <h2>Macam-macam Function Dalam JavaScript</h2>
+  <h3>fungsi dengan Cara Biasa</h3>
+  <p id="text1"></p>
+  <p id="text2"></p>
+  <h3>Mengembalikan nilai</h3>
+  <p id="text3"></p>
+  <h3>Fungsi dengan Ekspresi</h3>
+  <p id="text4"></p>
+  <h3>Fungsi dengan Tanda Panah</h3>
+  <p id="text5"></p>
+  <h3>Fungsi dengan constructor</h3>
+  <p id="text6"></p>
+
+  
+  <script src="js/function1.js"></script>
+  <script>
+    document.getElementById("text1").innerHTML = "The Temperature is " + toCelcius(77) + " Celcius";
+
+    var $a1 = 30;
+    var $a2 = 20;
+    var text2= penjumlahan($a1,$a2);
+    document.getElementById("text2").innerHTML=
+    "Hasil Penjumlahan : " +$a1+" + "+$a2+" = "+ text2 ;
+
+    var namaku = "Muh. Rizhal Ridwan";
+    printText(namaku + " dari Kelas Free web programming");
+
+    var $a3 = 12;
+    var $a4 = 6;
+    document.getElementById("text4").innerHTML=
+    "Hasil Perkalian : " +$a3+" &#215; "+$a4+" = "+ perkalian($a3,$a4);
+
+    var $a5 = 25;
+    var $a6 = 5;
+    document.getElementById("text5").innerHTML=
+    "Hasil Perkalian : " +$a5+" / "+$a6+" = "+ pembagian($a5,$a6);
+
+    const myFather = new person("Ridwan","Djamil", 52, "black");
+    document.getElementById("text6").innerHTML=
+    "nama Ayah saya " + myFather.firstName +" "+ myFather.lastName +
+    " Umur " + myFather.age +" Bernegara " + myFather.nationality;
+  </script>
+</body>
+</html>

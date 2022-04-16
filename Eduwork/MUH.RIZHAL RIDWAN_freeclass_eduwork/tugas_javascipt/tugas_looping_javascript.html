@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>looping</title>
+</head>
+<body>
+  <h3>Looping for</h3>
+  <p id="loop1"></p>
+
+  <h3>Looping for in</h3>
+  <p id="loop2"></p>
+
+  <h3>Looping for of</h3>
+  <p id="loop3"></p>
+
+  <h3>Looping While</h3>
+  <p id="loop4"></p>
+
+  <h3>Looping do While</h3>
+  <p id="loop5"></p>
+
+ <script>
+    // Pengulangan Menggunakan for
+    var angka ="";
+    for(var a = 1; a <= 10; a++){
+      angka+= "Pengulangan ke - "+ a +"<br>"
+    }
+
+    document.getElementById("loop1").innerHTML = angka;
+
+    // pengulangan menggunakan For in
+    var data = [
+      nama="Rizhal",
+      umur=29,
+      alamat="Jl. camar 1",
+    ]
+
+    var text ="";
+    for(var b in data){
+      text += b + "<br> ";
+    }
+    document.getElementById("loop2").innerHTML = text;
+   
+    // pengulangan menggunakan For off
+    var mobil = ["BMW", "Honda", "Toyota", "Wuling"];
+
+    var text="";
+    for(var c of mobil){
+      text += "Mobil "+ c +"<br>";
+      document.getElementById("loop3").innerHTML = text;
+    }
+    
+    // pengulangan menggunakan while
+    var buku = ["Cinta dan Cerita", "habibie dan ainun", "laravel", "java"];
+
+    var text2 ="";
+    for(var d of buku){
+      text2 += "Buku "+ d + "<br>";
+      document.getElementById("loop4").innerHTML = text2;
+    }
+    
+    // pengulangan menggunakna di while
+    var obat = ["Paracetamol", "Bodrex", "Milanta", "Inza"];
+
+    var text3 ="";
+    for(var e of obat){
+      text3 += "Obat " +  e + "<br>";
+      document.getElementById("loop5").innerHTML = text3;
+    }
+    
+  </script>
+</body>
+</html>

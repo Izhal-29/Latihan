@@ -1,0 +1,59 @@
+.navigasi {
+  background-color: rgb(255, 255, 255);
+  margin: 20px auto;
+}
+
+.nav-link{
+  font-size: 150%;
+  color: black;
+}
+
+.container-sm-fluid{
+  background-color: #D3BDD1;
+  height: 300%;
+  position: relative;
+}
+
+.user{
+  border-radius: 50%;
+  width: 40%;
+  /* background-color: aqua; */
+  margin-top: 6%;
+  margin-left: 50%;
+  margin-bottom: 6%;
+}
+
+.container-sm-fluid .biodata{
+  /* background-color: aqua; */
+  margin-top: 6%;
+  margin-right: 20%;
+  margin-bottom: 6%;
+}
+
+.biodata h1{
+  font-size: 350%;
+}
+
+.biodata h5{
+  color: white;
+}
+
+.biodata img{
+  margin-right: 4%;
+  width:5%;
+  margin-top: 10px;
+}
+
+.about{
+  margin-top:50px;
+}
+
+.aboutme hr{
+  width: 20%;
+  height: 3px;
+}
+
+.aboutme p{
+  text-align: justify;
+}
+

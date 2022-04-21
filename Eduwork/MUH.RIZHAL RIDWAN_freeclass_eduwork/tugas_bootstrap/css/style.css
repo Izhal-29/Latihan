@@ -3,7 +3,7 @@ body{
 }
 
 .nav li{
-  margin-left: 20px;
+  margin-left: 40px;
 }
 
 li .glyphicon{
@@ -19,6 +19,7 @@ li .glyphicon{
 
 .nav li{
   margin-top: 15px;
+  margin-right: 20px;
 }
 
 .nav li button{
@@ -28,39 +29,77 @@ li .glyphicon{
 }
 
 .slide .carousel-inner{
+  position: relative;
   margin-top: 0px;
+  max-height:700px;
 }
 
 .carousel-caption{
-  padding-bottom: 20%;
+  position: absolute;
+  top: 15%;
+  left: 25%;
+}
+
+.carousel-caption h1,h3{
+  font-size: 350%;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.overlay{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: #1971ff;
+  opacity: .7;
+}
+
+.gambar{
+  max-height: 50%;
 }
 
 .about{
   margin-bottom: 100px;
 }
 
-.about .container-fluid{
-  padding-left: 15%;
-  padding-right: 15%;
-}
-
 .col-lg-4{
   position: relative;
-  padding: 10% 5% 0% 10%;
+  padding: 5% 5% 0% 10%;
   /* background: rgb(114, 114, 114); */
+}
+
+.col-lg-4 h4{
+  margin-left: 10%;
+  color: #3d88ff;
+}
+
+.col-lg-4 p{
+  margin-left: 10%;
 }
 
 .col-lg-4 img{
   position: absolute;
-  left:-6%;
-  top: 50%;
-  height: 25%; 
+  left:5%;
+  top: 30%; 
+  overflow: hidden;
 }
 
 .col-lg-4 i{
   position: absolute;
   color: #4db7fe;
-  font-size: 450%;
-  left: -2%;
-  top: 50%;
+  font-size: 250%;
+  left: 10%;
+  top: 35%;
 }
+
+.col-lg-4 h4{
+  z-index: 2;
+}
+
+.col-lg-4 p{
+  z-index: 2;
+}
+
+
+
+

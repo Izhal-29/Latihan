@@ -1,16 +1,19 @@
-<?php
+<?php 
   require "function.php";
 
-  $brand = query("SELECT * FROM brand");
-  $produk = query("SELECT produk.*, brand.nama_brand, brand.id, brand.logo 
-                  FROM produk
-                  JOIN brand ON brand.id = produk.id_brand")[0];
-  
+  $id = $_GET['id_brand'];
+  $brand = query("SELECT nama_brand,id FROM brand");
+  $item = query("SELECT produk.*,brand.nama_brand, brand.logo 
+                 FROM produk
+                 JOIN brand ON brand.id = produk.id_brand 
+                 WHERE id_brand = $id");  
+
   if(isset($_POST["cari"])){
     $produk = cari($_POST["keyword"]);
-  }
+  }      
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,9 +43,9 @@
       crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
       integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
-      crossorigin="anonymous"/>
+      crossorigin="anonymous" />
 
-  <title>Home</title>
+  <title>Katalog</title>
 </head>
 
 <body style="background-color: #101010;">
@@ -52,7 +55,7 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-sm fixed-top navbar-dark bg-dark">
     <div class="container-fluid col-10">
-      <a class="navbar-brand fw-bold display-2" href="#">WATCH <span class="text-warning"> Katalog <i class="bi-smartwatch"></i></span></a>
+      <a class="navbar-brand fw-bold display-2" href="index.php">WATCH <span class="text-warning"> Katalog <i class="bi-smartwatch"></i></span></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -130,122 +133,31 @@
   </div>
   <!-- END Slide -->
 
-
-
-  <!-- Isi -->
-  <div class="container-fluid col-10 mt-5 " id="isi">
-
+  <!-- content -->
+  <div class="container-fluid col-10 mt-5" id="isi">
     <div class="row">
-      <h1 class="text-warning">Seiko</h1>
-      <div class="col-lg-4">
-        <img src="img/seiko0.webp" class="imgside" alt="">
+      <h1 class="text-warning">Brand : <?= $item[0]['nama_brand'] ?> </h1>
+      <?php 
+       foreach($item AS $i){
+      ?>
+      <div class="col-lg-2 kartu">
+        <a href="item.php?id=<?= $i["id"]?>">
+          <div class="card border-0 shadow">
+            <img src="img/<?= $i["gambar"] ?>" alt="" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title text-light"><?= $i["nama_produk"]; ?></h5>
+              <h5 class="card-text text-warning"><?= "Rp. ". number_format($i["harga"], 0, "," , "."); ?></h5>
+            </div>
+          </div>
+        </a>
       </div>
-      <div class="col-lg-8">
-        <div class="owl-carousel owl-theme">
-          <?php 
-            $seiko = query("SELECT * FROM produk WHERE id_brand = 2003 "); 
-            foreach($seiko as $s){
-          ?>
-              <a href="item.php?id=<?= $s['id']?>">
-                <div class="ms-2 me-2">
-                  <div class="card border-0 shadow">
-                    <img src="img/<?= $s["gambar"] ?>" alt="" class="card-img-top">
-                    <div class="card-body">
-                      <h5 class="card-title text-light"><?= $s["nama_produk"]; ?></h5>
-                      <h5 class="card-text text-warning"><?= "Rp. ". number_format($s["harga"], 0, "," , "."); ?></h5>
-                    </div>
-                  </div>
-                </div>
-              </a>
-          <?php } ?>
-        </div>
-      </div>
+      <?php
+        } 
+      ?>
     </div>
-
-    <div class="row">
-      <h1 class="text-warning">Alba</h1>
-      <div class="col-lg-8">
-        <div class="owl-carousel owl-theme">
-          <?php 
-            $alba = query("SELECT * FROM produk WHERE id_brand = 2004"); 
-            foreach($alba as $a){
-          ?>
-              <a href="item.php?id=<?= $a['id']?>">
-                <div class="ms-2 me-2">
-                  <div class="card border-0 shadow">
-                    <img src="img/<?= $a["gambar"] ?>" alt="" class="card-img-top">
-                    <div class="card-body">
-                      <h5 class="card-title text-light"><?= $a["nama_produk"]; ?></h5>
-                      <h5 class="card-text text-warning"><?= "Rp. ". number_format($a["harga"], 0, "," , "."); ?></h5>
-                    </div>
-                  </div>
-                </div>
-              </a>
-          <?php } ?>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <img src="img/alba0.webp" class="imgside" alt="">
-      </div>
-    </div>
-    
-    <div class="row">
-      <h1 class="text-warning">Alexandre Christie</h1>
-      <div class="col-lg-4">
-        <img src="img/ac0.webp" class="imgside" alt="">
-      </div>
-      <div class="col-lg-8">
-        <div class="owl-carousel owl-theme">
-          <?php 
-            $alexander = query("SELECT * FROM produk WHERE id_brand = 2001 "); 
-            foreach($alexander as $ac){
-          ?>
-              <a href="item.php?id=<?= $ac['id']?>">
-                <div class="ms-2 me-2">
-                  <div class="card border-0 shadow">
-                    <img src="img/<?= $ac["gambar"] ?>" alt="" class="card-img-top">
-                    <div class="card-body">
-                      <h5 class="card-title text-light"><?= $ac["nama_produk"]; ?></h5>
-                      <h5 class="card-text text-warning"><?= "Rp. ". number_format($ac["harga"], 0, "," , "."); ?></h5>
-                    </div>
-                  </div>
-                </div>
-              </a>
-          <?php } ?>
-        </div>
-      </div>
-    </div>
-    
-    <div class="row">
-      <h1 class="text-warning">Expedition</h1>
-      <div class="col-lg-8">
-        <div class="owl-carousel owl-theme">
-          <?php 
-            $expedition = query("SELECT * FROM produk WHERE id_brand = 2009"); 
-            foreach($expedition as $ex){
-          ?>
-              <a href="item.php?id=<?= $ex['id']?>">
-                <div class="ms-2 me-2">
-                  <div class="card border-0 shadow">
-                    <img src="img/<?= $ex["gambar"] ?>" alt="" class="card-img-top">
-                    <div class="card-body">
-                      <h5 class="card-title text-light"><?= $ex["nama_produk"]; ?></h5>
-                      <h5 class="card-text text-warning"><?= "Rp. ". number_format($ex["harga"], 0, "," , "."); ?></h5>
-                    </div>
-                  </div>
-                </div>
-              </a>
-          <?php } ?>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <img src="img/expedition0.webp" class="imgside" alt="">
-      </div>
-    </div>
-    
   </div>
-  <!-- END Isi -->
-
+  <!-- END content -->
+  
   <!-- footer -->
   <div class="container-fluid footer">
     <div class="row">
@@ -256,13 +168,14 @@
   </div>
   <!-- END Footer -->
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>  
-  
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
   <!-- Owl Carousel -->
   <script src="js/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
    <!--Jquery -->
-  
    <script src="js/main.js"></script>
 </body>
 </html>

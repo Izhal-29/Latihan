@@ -13,10 +13,12 @@ body{
   position: relative;
   min-height: 100vh;
   width: 100%;
-  overflow: hidden;
+  overflow: auto;
   background:#ffffff;
 }
 
+
+/* sidebar */
 .sidebar{
   position: fixed;
   top: 0;
@@ -26,6 +28,7 @@ body{
   background:#101010;
   padding:6px 14px;
   transition : all 0.5s ease;
+  z-index: 2;
 }
 
 .sidebar.active{
@@ -48,9 +51,11 @@ body{
   pointer-events: none;
 }
 
-.logo .logo-name, .logo .text-warning{
+.logo .logo-name a, .logo .text-warning{
   font-family: 'Lobster';
   font-weight: bold;
+  text-decoration: none;
+  color:#fff ;
 }
 
 .logo-content .logo i{
@@ -138,20 +143,6 @@ body{
   padding-left: 50px;
   font-size: 18px;
   color: #ffffff;
-}
-
-.sidebar ul li .bi-search{
-  position: absolute;
-  z-index: 1;
-  color: #fff;
-  font-size: 22px;
-  top: 2px;
-  transition: all 0.5 ease;
-}
-
-.sidebar ul li .bi-search:hover{
-  background: #f69d22;
-  color: #fff;
 }
 
 .sidebar ul li a{
@@ -285,3 +276,130 @@ body{
   color: #f69d22;
   margin:12px;
 }
+
+.content-admin{
+  background-image: url(../../img/user/Rizhal.png);
+  background-size:contain;
+  filter: opacity(.3);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.home-content h1{
+  font-size: 500%;
+  color: #f69d22;
+  font-weight: bold;
+  padding-top: 25%;
+}
+/* END Sidebar */
+
+
+
+
+/* content */
+td .foto{
+  width: 25%;
+  padding: 0px;
+}
+
+td .logo{
+  width: 25%;
+  background-color: #101010;
+}
+
+td img{
+  width: 50%;
+}
+
+.row .col-md-12 .tambah{
+  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+.row .col #table_wrapper{
+  padding: 5px 30px 5px 30px;
+}
+
+.row .col h1{
+  font-weight: bold;
+  font-family: 'Lobster';
+}
+
+.row .col-lg-3{
+  margin-right: 100px;
+}
+
+.formt{
+  margin: 10px 30px 10px 30px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.formt label{
+  font-weight: bolder;
+}
+
+.formt .form-control,.formt .form-select{
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.aksi{
+  max-width: 10%;
+  padding: 5px 10px;
+}
+
+.logo{
+  background-color: #101010;
+  margin-bottom: 5px;
+}
+
+.foto{
+  margin-bottom: 5px;
+}
+
+.efile{
+  margin-bottom: 5px;
+}
+
+.formt .form-check .form-check-input{
+  width: 18px;
+  margin-bottom: 25px;
+}
+
+.formt .form-check label{
+  font-weight: normal;
+}
+
+#table{
+  padding-top: 20px;
+}
+
+#table thead{
+  background-color: #f69d22;
+  color: #fff;
+  font-weight: bolder;
+}
+
+#deskripsi{
+  width:100%;
+}
+
+.row .col-lg-12 .btn{
+  width:max-content
+}
+
+.aksi .btn{
+  margin: 5px 5px 5px 5px;
+  width:100%;
+  color: white;
+}
+
+.btn i{
+  font-style: normal;
+  font-weight: bold;
+}
+/* END Content */

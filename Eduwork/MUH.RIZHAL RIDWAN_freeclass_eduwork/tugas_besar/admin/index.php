@@ -1,30 +1,16 @@
 <?php 
-  if(isset($_GET['url'])){
-    $url=$_GET['url'];
+  session_start();
 
-    switch($url){
-      case 'user':
-        include 'user/index.php';
-        break;
-
-      case 'produk':
-        include 'produk/index.php';
-        break;
-
-      case 'brand':
-        include 'brand/index.php';
-        break;
-
-      case 'supplier':
-        include 'supplier/index.php';
-        break;
-      
-      default:
-        echo "<h1>Halo Selamat Datang Admin</h1>";
-        break;
-    }
+  if(!isset($_SESSION["login"])){
+    header("location:../login.php");
+    exit;
+  } else {
+    require "../function.php";
+    $u = query("SELECT * FROM user WHERE id = '$_SESSION[login]'");
   }
+  // var_dump($u);
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,69 +40,56 @@
     <div class="logo-content">
       <div class="logo">
         <i class="bi-smartwatch"></i>
-        <div class="logo-name">WATCH <span class="text-warning"> Store </span></div>
+        <div class="logo-name"> <a href="../index.php"> WATCH <span class="text-warning"> Katalog </span> </a>  </div>
       </div>
       <i class="bi-menu-button-wide-fill" id="btn"></i>
     </div>
     <ul class="nav-list">
       <li>
-        <a href="#">
-          <i class="bi-search"></i>
-         <input type="text" placeholder="Search....">
-        </a>
-        <span class="tooltip">Pencarian</span>
-      </li>
-      <li>
-        <!-- <a href="?url=user" id="user"> -->
+        <a href="user/index.php" id="user">
           <i class="bi-person-circle"></i>
           <span class="links-name">User</span>
         </a>
         <span class="tooltip">User</span>
       </li>
       <li>
-        <a href="../admin/produk/index.php" id="produk">
+        <a href="produk/index.php" id="produk">
           <i class="bi-shop"></i>
           <span class="links-name">Produk</span>
         </a>
         <span class="tooltip">Produk</span>
       </li>
       <li>
-        <a href="?url=brand" id="brand">
+        <a href="brand/index.php" id="brand">
           <i class="bi-postcard-fill"></i>
           <span class="links-name">Brand</span>
         </a>
         <span class="tooltip">Brand</span>
       </li>
       <li>
-        <a href="?url=supplier" id="supplier">
+        <a href="supplier/index.php" id="supplier">
           <i class="bi-shop-window"></i>
           <span class="links-name">Supplier</span>
         </a>
         <span class="tooltip">Supplier</span>
       </li>
-      <li>
-        <a href="#">
-          <i class="bi-wrench-adjustable-circle"></i>
-          <span class="links-name">Setting</span>
-        </a>
-        <span class="tooltip">Setting</span>
-      </li>
     </ul>
     <div class="profile-content">
       <div class="profile">
         <div class="profile-details">
-          <img src="img/user.png" alt="">
+          <img src="../img/user/admin.png" alt="">
           <div class="name-job">
-            <div class="name">Rizhal</div>
+            <div class="name">Admin</div>
             <div class="job">Administrator</div>
           </div>
         </div>
-        <a href="../index.php"><i class="bi-door-open-fill" id="log-out"></a></i>
+        <a href="../Logout.php"><i class="bi-door-open-fill" id="log-out"></a></i>
       </div>
     </div>
   </div>
   <div class="home-content">
-      <!--  -->
+    <div class="content-admin"></div>
+    <h1 class="text-center">Halaman Admin Untuk Melakukan CRUD</h1>
   </div>
 
 

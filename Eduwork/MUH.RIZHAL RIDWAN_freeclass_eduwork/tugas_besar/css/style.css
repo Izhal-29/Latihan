@@ -1,6 +1,12 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
+html,body{
+  height: 100%;
+  background-color: #101010 !important;
+}
+
+/* index */
 .navbar{
   padding:0;
 }
@@ -33,7 +39,7 @@
 }
 
 .nav-link i {
-  font-size : 30px;
+  font-size : 200%;
   font-style: normal;
   margin-left: 50px;
   font-weight: bold;
@@ -47,6 +53,9 @@ button .carousel-control-prev-icon, .carousel-control-next-icon{
   font-size: 200px;
   border-radius: 50%; 
   background-color: black;
+}
+.row .carousel{
+  margin-top: 30px;
 }
 
 .carousel-caption h5,p{
@@ -99,6 +108,14 @@ button .carousel-control-prev-icon, .carousel-control-next-icon{
   color: white;
 }
 
+.card{
+  max-height: 500px !important;
+}
+
+.card .card-body{
+  min-height: 120px !important;
+}
+
 .owl-nav .owl-next:hover,.owl-nav .owl-prev:hover{
   background: none !important;
   outline: none !important;
@@ -119,14 +136,24 @@ button .carousel-control-prev-icon, .carousel-control-next-icon{
   display: none;
 }
 
+.owl-item a{
+  text-decoration: none;
+}
+
 .card-body{
   background-color: #101010;
+}
+
+h5.card-title{
+  font-size: 12px;
+  padding-top: 0; 
+  max-height: 32px;
+  overflow: hidden;
 }
 
 .ms-2:hover{
   border: 1px solid blanchedalmond;
 }
-
 
 .footer{
   background: #424242;
@@ -139,3 +166,165 @@ button .carousel-control-prev-icon, .carousel-control-next-icon{
   padding-bottom: 10px;
   font-size: small;
 }
+/* END index */
+
+
+
+
+/* Item */
+.head-item{
+  margin-bottom: 30px;
+}
+
+.head-item .logo-brand{
+  /* background-color: red; */
+  height: 100px;
+  width: 10%;
+  float: left;
+  margin-right: 30px;
+}
+
+.head-item img{
+  width: 100% !important;
+  border: 0.2px solid rgb(212, 212, 212);
+  border-radius: 10px;
+}
+
+.head-item h1, .head-item h6{
+  /* background-color: rgb(0, 255, 34); */
+  margin-left: 0;
+  margin-bottom: 0;
+  color: #ffffff;
+}
+
+.head-item h6{
+  color: rgb(115, 115, 115);
+}
+
+.head-item .nama-brand{
+  text-decoration: none;
+  color: #f69d22;
+}
+
+.gambar-item{
+  width: 40%;
+  float:left;
+  margin-right: 20px;
+}
+
+.gambar-item img{
+  border-radius: 10px;
+  width: 100%;
+}
+
+.body-item{
+  color: white;
+  margin-bottom: 50px;
+}
+
+.body-item h1{
+  color: #ffffff;
+}
+
+.body-item h2{
+  color: #f69d22;
+  margin-bottom: 20px;
+}
+
+.body-item .spek{
+  width: 10%;
+}
+
+.row .col .spek{
+  width: 20%;
+  padding-right: 0px;
+}
+
+.spek-isi h6{
+  margin-bottom: 0px;
+  font-size: large;
+}
+
+.spek-isi span{
+  display: block;
+  color:white;
+  margin-bottom: 10px;
+}
+
+.row .kartu{
+  margin-bottom: 30px !important;
+}
+
+.kartu a{
+  text-decoration: none;
+}
+
+/* END Item */
+
+
+
+
+/* login */
+.global-container{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f69d22;
+}
+
+.login-form{
+  width:380px;
+  height: 450px;
+  padding: 20px;
+  background-color: #353535 !important;
+  border-radius: 10px;
+}
+
+input[type="text"],
+input[type="password"]{
+  background: #000000;
+  color: #ffffff;
+  border: 2px solid #f69d22;
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus{
+  outline: none;
+  border:none;
+  background: #000000;
+  color: #ffffff;
+  margin: 0;
+}
+
+.card-title{
+  font-weight: 900;
+  padding-top: 20px;
+  background-color: #353535;
+}
+.card-body{
+  background-color: #353535;
+}
+
+.card-text .form-check-input:checked{
+  background-color: #f69d22;
+  outline: #101010;
+}
+
+.d-grid .btn{
+  background-color: #f69d22;
+  color: white;
+  transform: translateY(10px);
+  font-size: 14px;
+  border-radius: 10px !important;
+  border: 2px solid #353535;
+  font-weight: 600;
+}
+
+.d-grid .btn:hover{
+  border: 2px solid #101010;
+}
+
+/* END Login */

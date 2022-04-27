@@ -20,20 +20,21 @@
 
       if(update($_POST) > 0){
       // mengambil nilai dari fungsi mysqli_affected_rows jika datanya bertambah, diubah, dihapus maka menghasilkan 1 jika error maka menghasilkan -1
-        echo "
-              <script>
-                alert ('Data Berhasil diupdate!');
-                document.location.href='Index.php'
-              </script>
-             ";
-      } else {
-        echo "
-              <script>
-                alert ('Data Gagal diupdate!');
-                document.location.href='Index.php'
-              </script>
-             ";
+      //   echo "
+      //         <script>
+      //           alert ('Data Berhasil diupdate!');
+      //           document.location.href='Index.php'
+      //         </script>
+      //        ";
+      // } else {
+      //   echo "
+      //         <script>
+      //           alert ('Data Gagal diupdate!');
+      //           document.location.href='Index.php'
+      //         </script>
+      //        ";
       }
+      var_dump($_POST);
     }
 ?>
 

@@ -27,4 +27,19 @@ $('.owl-carousel').owlCarousel({
         items: 4
     }
   }
-})
+});
+
+$(document).ready(function(){
+  $('#tombol-cari').hide();
+  $('#keyword').on('keyup',function(){ 
+    
+    // $('.loader').show(); //jquery carikan saya loader lalu tampilkan
+
+    $.get('ajax/produk.php?keyword=' + $('#keyword').val(),function(data){ 
+      $('#isi').html(data);
+      // $('.loader').hide(); // jquery cariin saya class loader lalu sembunyikan
+    });
+
+  });
+}); 
+

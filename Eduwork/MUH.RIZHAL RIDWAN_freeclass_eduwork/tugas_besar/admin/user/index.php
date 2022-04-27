@@ -1,18 +1,14 @@
 <?php 
+  session_start();
 
-session_start();
+  if(!isset($_SESSION["login"])){
+    header("location:../../login.php");
+    exit;
+  }
 
-if(!isset($_SESSION["login"])){
-  header("location:../../login.php");
-  exit;
-}
-
-require "function.php";
-
-$brand = query("SELECT brand.*, supplier.nama_supplier
-                  FROM brand
-                  JOIN supplier ON supplier.id = brand.id_supplier;
-                ");
+  require "function.php";
+  
+  $user = query("SELECT * FROM user");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,7 +36,7 @@ $brand = query("SELECT brand.*, supplier.nama_supplier
   <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
   
 
-  <title>Brand</title>
+  <title>User</title>
 </head>
 <body>
   <div class="sidebar">
@@ -53,7 +49,7 @@ $brand = query("SELECT brand.*, supplier.nama_supplier
     </div>
     <ul class="nav-list">
       <li>
-        <a href="../user/index.php" id="user">
+        <a href="#" id="user">
           <i class="bi-person-circle"></i>
           <span class="links-name">User</span>
         </a>
@@ -67,7 +63,7 @@ $brand = query("SELECT brand.*, supplier.nama_supplier
         <span class="tooltip">Produk</span>
       </li>
       <li>
-        <a href="#" id="brand">
+        <a href="../brand/index.php" id="brand">
           <i class="bi-postcard-fill"></i>
           <span class="links-name">Brand</span>
         </a>
@@ -101,13 +97,13 @@ $brand = query("SELECT brand.*, supplier.nama_supplier
 
       <div class="row bg-warning">
         <div class="col text-center">
-          <h1>Data Brand</h1>
+          <h1>Data User</h1>
         </div>
       </div>
 
       <div class="row">
         <div class="col-md-12">
-          <a class="btn btn-primary tambah" href="tambah.php"> <i class="bi-plus-circle-fill"> Tambah Brand </i> </a>
+          <a class="btn btn-primary tambah" href="tambah.php"> <i class="bi-plus-circle-fill"> Tambah User </i> </a>
         </div>
       </div>
 
@@ -117,27 +113,27 @@ $brand = query("SELECT brand.*, supplier.nama_supplier
             <thead>
               <tr>
                 <th>No</th>
-                <th>Brand</th>
-                <th>Nama Brand</th>
-                <th>Logo</th>
-                <th>Nama Supplier</th>
+                <th>Nama User</th>
+                <th>Hak Akses</th>
+                <th>Username</th>
+                <th>foto</th>
                 <th>Aksi</th>
               </tr>
             </thead>
             <tbody>
               <?php
                 $no=1;
-                foreach($brand as $b) {
+                foreach($user as $u) {
               ?>  
               <tr>
                 <td><?php echo $no ?> </td>
-                <td><?php echo $b["id"]; ?></td>
-                <td><?php echo $b["nama_brand"]; ?></td>
-                <td align="center" valign="middle"><img class="logo" src="../../img/logo/<?php echo $b["logo"] ?>" alt=""></td>
-                <td><?php echo $b["nama_supplier"] ?></td>
+                <td><?php echo $u["nama_user"]; ?></td>
+                <td><?php echo $u["hak_akses"]; ?></td>
+                <td><?php echo $u["username"] ?></td>
+                <td class="text-center"><img class="foto" src="../../img/user/<?php echo $u["foto"] ?>" alt=""></td>
                 <td class="text-center aksi"> 
-                  <a href="edit.php?id=<?= $b['id']; ?>" class="btn btn-warning"> <i class="bi-pencil-square"> Edit </i> </a> 
-                  <a href="hapus.php?id=<?= $b['id']; ?>" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus data ?');"> <i class="bi-trash3"> Hapus </i> </a>
+                  <a href="edit.php?id=<?= $u['id']; ?>" class="btn btn-warning"> <i class="bi-pencil-square"> Edit </i> </a> 
+                  <a href="hapus.php?id=<?= $u['id']; ?>" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus data ?');"> <i class="bi-trash3"> Hapus </i> </a>
                 </td>
               </tr>
               <?php 

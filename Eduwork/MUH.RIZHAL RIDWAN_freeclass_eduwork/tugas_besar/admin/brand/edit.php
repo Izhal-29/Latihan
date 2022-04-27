@@ -1,18 +1,40 @@
 <?php 
+  session_start();
 
-session_start();
+  if(!isset($_SESSION["login"])){
+    header("location:../../login.php");
+    exit;
+  }
+  
+  require "function.php";
 
-if(!isset($_SESSION["login"])){
-  header("location:../../login.php");
-  exit;
-}
+  $id = $_GET["id"];
 
-require "function.php";
+  $b = query("SELECT brand.*, supplier.nama_supplier FROM brand
+                   JOIN supplier ON supplier.id = brand.id_supplier
+                   WHERE brand.id = $id")[0];
 
-$brand = query("SELECT brand.*, supplier.nama_supplier
-                  FROM brand
-                  JOIN supplier ON supplier.id = brand.id_supplier;
-                ");
+  $a_supplier = mysqli_query($conn, "SELECT * FROM supplier");
+
+  if(isset($_POST["submit"])){
+    if(update($_POST) > 0){
+      echo "
+            <script>
+              alert ('Data Berhasil diupdate!');
+              document.location.href='Index.php'
+            </script>
+            ";
+    } else {
+      echo "
+            <script>
+              alert ('Data Gagal diupdate!');
+              document.location.href='Index.php'
+            </script>
+            ";
+    }
+    // var_dump($_POST);
+  }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,7 +62,7 @@ $brand = query("SELECT brand.*, supplier.nama_supplier
   <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
   
 
-  <title>Brand</title>
+  <title>Produk</title>
 </head>
 <body>
   <div class="sidebar">
@@ -67,7 +89,7 @@ $brand = query("SELECT brand.*, supplier.nama_supplier
         <span class="tooltip">Produk</span>
       </li>
       <li>
-        <a href="#" id="brand">
+        <a href="index.php" id="brand">
           <i class="bi-postcard-fill"></i>
           <span class="links-name">Brand</span>
         </a>
@@ -96,59 +118,74 @@ $brand = query("SELECT brand.*, supplier.nama_supplier
   </div>
 
 
-  <div class="home-content">
+  <div  class="home-content">
     <div class="container-fluid">
 
       <div class="row bg-warning">
         <div class="col text-center">
-          <h1>Data Brand</h1>
+          <h1>Form Edit Data Brand</h1>
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-md-12">
-          <a class="btn btn-primary tambah" href="tambah.php"> <i class="bi-plus-circle-fill"> Tambah Brand </i> </a>
-        </div>
-      </div>
+      <div class="row formt">
+        <form action="" method="POST" enctype="multipart/form-data">
+          <input type="hidden" name="logoLama" value="<?= $b["logo"]; ?>"> 
+          <div class="col-lg-8 offset-3">
 
-      <div class="row">
-        <div class="col">
-          <table id="table" class="display table table-bordered">
-            <thead>
-              <tr>
-                <th>No</th>
-                <th>Brand</th>
-                <th>Nama Brand</th>
-                <th>Logo</th>
-                <th>Nama Supplier</th>
-                <th>Aksi</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php
-                $no=1;
-                foreach($brand as $b) {
-              ?>  
-              <tr>
-                <td><?php echo $no ?> </td>
-                <td><?php echo $b["id"]; ?></td>
-                <td><?php echo $b["nama_brand"]; ?></td>
-                <td align="center" valign="middle"><img class="logo" src="../../img/logo/<?php echo $b["logo"] ?>" alt=""></td>
-                <td><?php echo $b["nama_supplier"] ?></td>
-                <td class="text-center aksi"> 
-                  <a href="edit.php?id=<?= $b['id']; ?>" class="btn btn-warning"> <i class="bi-pencil-square"> Edit </i> </a> 
-                  <a href="hapus.php?id=<?= $b['id']; ?>" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus data ?');"> <i class="bi-trash3"> Hapus </i> </a>
-                </td>
-              </tr>
-              <?php 
-                $no++;
-                }
-              ?>
-            </tbody>
-          </table>
-        </div>
-      </div>
+            <div class="row">
+              <div class="col-lg-3">
+                <label for="id">Kode Brand :</label>
+              </div>
+              <div class="col-lg-4">
+                <input readonly class="form-control" name="id" type="text" id="id" value="<?= $b["id"]; ?>">
+              </div>
+            </div>
 
+            <div class="row">
+              <div class="col-lg-3">
+                <label for="nama_brand">Nama Brand :</label>
+              </div>
+              <div class="col-lg-4">
+                <input class="form-control" name="nama_brand" type="text" id="nama_brand" value="<?= $b["nama_brand"]; ?>">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-3">
+                <label for="logo">Logo :</label>
+              </div>
+              <div class="col-lg-4">
+                <img class="logo" src="../../img/logo/<?= $b["logo"] ?>" alt="logo" witdh="100" height="100"><br>
+                <input type="file" name="logo" id="logo" class="form-control">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-3">
+                <label for="id_supplier">Nama Supplier :</label>
+              </div>
+              <div class="col-lg-4">
+                <select name="id_supplier" id="supplier" class="form-select">
+                  <option value="<?= ($b['id'] == $id ? $b["id_supplier"] : ''); ?>"><?= $b["nama_supplier"]; ?></option>
+                  <?php 
+                    while($s = mysqli_fetch_array($a_supplier)) { ?>
+                      
+                    <option value="<?= $s["id"]; ?>"> <?= $s["nama_supplier"]; ?> </option>
+                        
+                  <?php } ?>
+                </select>
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="col-lg-3">
+                <button type="submit" class="form-control btn btn-primary btn-lg" name="submit"> Update </button>
+              </div>
+            </div>
+
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 
@@ -171,6 +208,11 @@ $brand = query("SELECT brand.*, supplier.nama_supplier
     $(document).ready( function () {
       $('#table').DataTable();
     } );
+    // function confirmation(id){
+    //   if (confirm("Apakah anda yakin ingin mneghapus data ini ?")){
+    //     window.location.href='hapus.php?id='+id;
+    //   }
+    // }
   </script>
 </body>
 </html>

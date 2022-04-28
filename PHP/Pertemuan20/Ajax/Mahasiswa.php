@@ -44,4 +44,4 @@ usleep(500000); // setengah detik
         $i++;
         endforeach; 
       ?>
-  </table
+  </table>

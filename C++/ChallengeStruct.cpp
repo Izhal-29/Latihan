@@ -19,7 +19,7 @@ struct info{
 
 info infoBangunan[100];
 int banyakBangunan = 0;
-bv
+
 info tambahBangunan(){
 	char name[200];
 	int age, length, width;

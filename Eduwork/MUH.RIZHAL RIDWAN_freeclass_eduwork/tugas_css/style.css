@@ -1,12 +1,15 @@
-body{
+html,body{
   background-color: rgb(243, 243, 243);
+  padding: 0;
+  margin: 0;
 }
 
-
-.Container{
-  margin: 50px 25% 50px 25%;
+div.Container{
+  margin: 50px 0;
   position: relative;
-  /* background-color: #17a8f8; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .Judul{
@@ -15,34 +18,73 @@ body{
 
 .hp{
   border-radius: 10px;
-  float: left;
-  margin-right: 20px;
-}
-
-.hp:after{
-  content: "";
-  display: block;
-  clear: both;
-}
-
-.kotak{
+  margin-right: 30px;
   position: relative;
 }
 
-.kotak:after{
-  content: "";
-  display: block;
-  clear: both;
+.hp img{
+  height: 105%;
+}
+
+.wrapper{
+  position: absolute;
+  overflow: hidden;
+  width: 58.5%;
+  height: 90%;
+  top: 49%;
+  left: 64%;
+  display: flex;
+  border-radius: 25px;
+  transform: translate(-50%, -50%);
+}
+
+.wrapper img{
+  width: 100%;
+  animation: slide 16s infinite; 
+  
+}
+
+@keyframes slide{
+  0%{
+    transform: translateX(0);
+  }
+  25%{
+    transform: translateX(0);
+  }
+  30%{
+    transform: translateX(-100%);
+  }
+  50%{
+    transform: translateX(-100%);
+  }
+  55%{
+    transform: translateX(-200%);
+  }
+  75%{
+    transform: translateX(-200%);
+  }
+  80%{
+    transform: translateX(-300%);
+  }
+  100%{
+    transform: translateX(-300%);
+  }
+
+}
+
+.kotak{
+  display: flex;
+  position: relative;
+  flex-direction: column;
 }
 
 .kotak1{
   background-color: rgb(255, 255, 255);
-  margin: 10px 45%;
-  width: 45%;
   border-style: solid;
   border-width: 1px;
   border-color: #dbdbdb;
   text-align: center;
+  margin-bottom: 10px;
 }
 
 .input  {
@@ -89,7 +131,7 @@ body{
   background-color:  white;
   padding: 10px 20px 10px 20px;
   top: 43%;
-  left: 64.5%;
+  left: 42%;
   border-radius: 50%;
 }
 
@@ -101,15 +143,11 @@ body{
 
 .fb{
   position: absolute;
-  left: 28%;
+  left: 21%;
+  bottom: -6px;
 }
 
 .logfb{
-  position: absolute;
-  float: right;
-  top: 15%;
-  bottom: 50%;
-  right: 28%;
   text-decoration: none;
   font-weight: 500;
   color:#385185;
@@ -125,16 +163,15 @@ body{
   margin-bottom: 20px;
 }
 
-.kotak2{
-  background-color: rgb(255, 255, 255);
-  margin: 10px 45%;
-  width: 45%;
+div.kotak2{
+  background-color: rgb(255, 255, 254);
+  border: 1px solid #dbdbdb;
   height: 80px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #dbdbdb;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* background-color: #17a8f8; */
 }
 
 .signup{
@@ -145,15 +182,8 @@ body{
 }
 
 .kotak3{
-  margin: 0px 45%;
-  width: 45%;
   text-align: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.dha {
-  display: block;
-  margin-top: 7%;
 }
 
 .ag{
@@ -161,9 +191,6 @@ body{
 }
 
 .footer{
-  margin: 80px auto 0 0;
-  width: 90%;
-  /* background-color: red; */
   display: block;
   text-align: center;
 }
@@ -185,7 +212,13 @@ body{
 
 .f3{
   margin-bottom: 20px;
+}
 
+.f3 select{
+  border: none;
+  background-color: rgb(243, 243, 243);
+  padding: 0;;
+  width: 1%;
 }
 
 @font-face{

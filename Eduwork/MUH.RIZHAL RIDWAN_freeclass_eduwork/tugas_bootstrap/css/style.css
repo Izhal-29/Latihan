@@ -1,5 +1,7 @@
-body{
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+body, html{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding:0;
+  margin:0;
 }
 
 .nav li{
@@ -31,7 +33,13 @@ li .glyphicon{
 .slide .carousel-inner{
   position: relative;
   margin-top: 0px;
-  max-height:700px;
+  height:50%;
+}
+
+.carousel-inner img{
+  height: 30%;
+  overflow: hidden;
+
 }
 
 .carousel-caption{

@@ -1,0 +1,98 @@
+html, body{
+  padding: 0;
+  margin:0;
+}
+
+/* parent */
+.container{
+  /* display:flex di letakkan pada parent */
+  display: flex;
+  width: 600px;
+  /* height: 400px; */
+  border: 5px solid gray;
+  margin: 30px auto;
+  padding:5px;
+  box-sizing: border-box;
+  /* 
+  mengatur arah / urutan dari items/child di dalam parent
+  flex-direction: row | row=reverse | column | column-reverse; 
+  row : nilai default hasilnya dari arah kiri atas
+  row-reverse : hasilnya dari arah kanan atas
+  column: hasilnya dari kiri ke bawah
+  colum-reverse : hasilnya dari bawah kiri ke atas
+  */
+  flex-direction: row;
+
+  /* 
+  untuk memindahkan item / child
+  flex-wrap : nowrap | wrap | wrap-reverse;
+  nowrap : nilai default hasilnya semua items akan berada pad satu baris meskipun ukurannya sudah tidak cukup 
+  wrap : hasilnya memindahakn items ke bawah apa bila ukurannya sudah tidak cukup
+  wrap-reverse : hasilnya memindahakn items ke bawah apa bila ukurannya sudah tidak cukup dan membalikkan urutannya
+  */
+  flex-wrap: wrap;
+
+  /* 
+  untuk mengatur perataan dan jarak antar Items / child secara horizontal (main axis)
+  justify-content : flex-start | flex-end | center | space-between | space-around | space-evenly;
+  flex-start : rata kiri
+  flex-end : rata kanan
+  space-between : element awal rapat dikiri dan element akhir rapat di kanan dan sisanya ditengah dibagi rata
+  space-around : jarak awal dan akhir sama yang dari hasil bagi jarak antar item
+  space-evenly : jarak antar item, awal dan akhir dibagai rata
+  */
+  justify-content:flex-start ;
+
+  /* 
+  untuk mengatur perataan Items / child secara vertikal (cross axis)
+  align-items : flex-start | flex-end | center | stretch | baseline;
+  flex-start : rata atas
+  flex-end : rata bawah
+  center : rata tengah
+  stretch : height item/child menyesuaikan height parent ketika item/child tidak diberikan height
+  baseline: rata tengahkan sesuai ukuran dan posisi text dalam item
+  */
+  align-items: stretch;
+
+  /* 
+  untuk mengatur jarak antar item secara vertikal (cross axis) ketika lebih dari satu baris
+  align-content: flex-start | flex-end | center | stretch | space-between | space-around;
+  flex-start : nilai default rapat ke kiri atas
+  flex-end : rapat ke kiri bawah
+  center : rata tengah
+  stretch : menyesuaikan height parent atas dan bawah ketika child tidak diberikan height dan align-item : stretch;
+  space-between : element atas rapat diatas dan element akhir rapat di bawah dan sisanya ditengah dibagi rata
+  space-around : jarak atas dan bawah sama yang dari hasil bagi jarak antar item
+  */
+  align-content: stretch;
+}
+
+
+/* items */
+.container div{
+  height: 100px;
+  background-color: aqua;
+  margin: 2px;
+  flex-grow:1;
+}
+
+/* o */
+div.satu{
+  /* order:4 ; */
+  flex-grow: 3;
+}
+
+div.dua{
+  /* order:3 ; */
+  flex-grow: 2;
+}
+
+div.tiga{
+  /* order:2 ; */
+  /* flex-grow: 3; */
+}
+
+div.empat{
+  /* order:1 ; */
+  /* flex-grow: 4; */
+}

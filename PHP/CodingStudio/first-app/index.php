@@ -4,8 +4,7 @@
   echo ('<h1> Welcome </h1>');
 
   $namaku = 'Rizhal';
-  $namaku2 = 'Rezha';
-
+  $namaku2 = 'Ridwan';
 
   echo ($namaku);
 ?>

@@ -1,0 +1,352 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: auto;
+  background:#fffdea;
+}
+
+.container{
+  padding: 10px 20%;
+}
+
+.row.head {
+  width: 100%;
+  text-align: center;
+}
+
+.row.head img{
+  border-radius: 50%;
+  background-color: black;
+  border: 5px solid #a0a0a0;
+  transition: all 0.5s ease;
+}
+
+.row.head img:hover{
+  transform: rotate(360deg);
+}
+
+.row .judul h1{
+  font-size: 50px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.row .judul h1 span{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: red;
+}
+
+.row.link{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.row.link .menu{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.menu a{
+  text-decoration: none;
+  background-color: black;
+  padding: 10px 30px 10px 30px;
+  color: #fffdea ;
+  border-radius: 20px;
+  margin-left: 5px;
+  transition: all 0.5s ease;
+}
+
+.menu a:hover{
+  transform: scale(1.5);
+  background-color: #fffdea;
+  color: black;
+  border: 2px solid black;
+  font-weight: bold;
+}
+
+
+/* Biografi */
+.row.content .judul h3{
+  font-family: 'lobster';
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.row.content .isi{
+  font-size: 20px;
+}
+
+.row.content .isi p{
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.personal-info::before{
+  content: ' ';
+  display: block;
+  border: 1px dashed #a0a0a0;
+}
+
+.personal-info {
+  width: 100%;
+  text-align: center;
+}
+
+.personal-info .info-item{
+  display: inline-block;
+  width: 300px;
+  margin: 0px 20px 0px 20px;
+  padding: 20px 5px 2px 5px;
+  border-bottom: 1px solid #a0a0a0;
+}
+
+.personal-info .info-item p{
+  font-weight: 600;
+  padding: 10px 0;
+  font-size: 16px;
+}
+
+.personal-info .info-item span{
+  font-weight: 400;
+  margin-left: 5px;
+}
+
+.personal-info .info-item:last-child{
+  margin-bottom: 50px;
+}
+
+/* skils */
+.isi .skills{
+  background-color: #ffffff63;
+  padding: 15px 30px;
+  border: 2px solid ;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(48,46,77,1) ;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  max-width: 100%;
+}
+
+.isi .skills .skill-item{
+  max-width:100%;
+  padding: 10px 30px 10px 30px;
+  margin-bottom: 25px;
+}
+
+.isi .skills .skill-item h5{
+  line-height: 40px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.isi .skills .skill-item .progress{
+  background-color: #a0a0a0;
+  border-radius: 4px;
+  height: 7px;
+  width: 100%;
+  position: relative;
+}
+
+.isi .skills .skill-item .progress .progress-in{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  border-radius: 4px;
+  background-color: rgb(0, 0, 0);
+}
+
+.isi .skills .skill-item .skill-percent{
+  position: absolute;
+  right: 0;
+  top: -40px;
+  font-weight: 400;
+  line-height: 40px ;
+}
+
+
+/* my close friends */
+.isi .friends{
+  max-width: 100%;
+  /* border: 2px solid black;
+  border-radius: 25px; */
+  padding: 10px 30px;
+  text-align: center;
+  box-sizing: border-box;
+  text-overflow: ellipsis;
+}
+
+.isi .friends .friend-item{
+  display: inline-block;
+  margin : 30px 30px;
+  text-align :center;
+}
+
+.isi .friends .friend-item h3{
+  text-shadow: 2px 2px 2px #a0a0a0;
+  font-style: italic;
+  font-size: 26px;
+}
+
+.isi .friends .friend-item img{
+  border-radius: 25%;
+  margin-top: 10px;
+  border: 2px solid #a0a0a0;
+}
+
+.isi .friends .friend-item p{
+  font-weight: 600;
+  padding: 10px 0;
+  border-bottom: 1px solid #a0a0a0;
+  text-align: left;
+}
+
+.isi .friends .friend-item p span{
+  font-weight: 400;
+  margin-left: 10px;
+}
+
+/* Contact Me */
+.contact-form {
+  width: 60%;
+  padding: 20px 30px;
+  margin: 0 auto;
+}
+
+.contact-form .form-item{
+  margin:20px 0px;
+}
+
+.contact-form .form-item .form-group{
+  font-size: large;
+}
+
+.contact-form .form-item .form-group label{
+  font-weight: 600;
+  display: block;
+  margin-bottom: 10px;
+  margin-top: 30px;
+  text-align: left;
+}
+
+.contact-form .form-item .form-group input{
+  border-radius: 20px;
+  padding: 10px;
+  width: 100%;
+  font-size: large;
+  border: 1px solid #a0a0a0;
+}
+
+
+
+.contact-form .form-item .form-group input[type=radio]{
+  padding: 0;
+  width: 2em;
+  margin: 0;
+  height: 20px;
+  vertical-align: middle;
+}
+
+.contact-form .form-item .form-group input[type=radio] + label{
+  display: inline-block;
+  margin-left: -0.5em ;
+  margin-top: 0px;
+  width: 120px;
+  font-weight:300;
+  text-align: left;
+}
+
+.contact-form .form-item .form-group textarea{
+  width: 100%;
+  border: 1px solid #a0a0a0;
+  border-radius: 20px;
+}
+
+.contact-form .form-item .form-group button{
+  padding: 10px 50px;
+  color: #fffdea;
+  font-size: large;
+  font-weight: 600;
+  background-color: black;
+  border: none;
+  border-radius: 20px;
+  transition: all 0.5s ease;
+}
+
+.contact-form .form-item .form-group button:hover{
+  border: 2px solid #a0a0a0;
+  background-color: #fffdea;
+  color: black;
+  cursor: pointer;
+} 
+
+@media (max-width:991px){
+  .row.link .menu {
+    display: block;
+  }
+
+  .menu a{
+    display: block;
+    margin-bottom: 5px;
+    transition: all 0.5s ease;
+  }
+
+  .contact-form{
+    width: 100%;
+  }
+
+  .menu a:hover{
+    transform: scale(1.02);
+  }
+
+  .isi .friends{
+    text-align: center;
+  }
+
+  .isi .friends .friend-item{
+    display: block;
+    margin: 0px;
+  }
+}
+
+@media (max-width:614px){
+  .contact-form .form-item .form-group input[type=radio] + label{
+    width: 80%;
+  }
+}
+
+@media (max-width:570px){
+  .personal-info .info-item{
+    margin: 0px;
+    width: 100%;
+  }
+
+  .contact-form .form-item .form-group input[type=radio] + label{
+    width: 80%;
+  }
+
+  .isi .friends .friend-item img{
+    width: 100px;
+  }
+
+  .isi .friends .friend-item h3{
+    font-size: 20px;
+  }
+
+  .isi .friends .friend-item p{
+    font-size: 16px;
+  }
+
+}

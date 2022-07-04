@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+
+  <!-- font google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <title>Biografi</title>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"> Izhal </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Personal Data</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <div class="container-fluid p-2 text-dark jumbotrons">
+    <div class="jumbotron d-flex flex-column justify-content-center my-5">
+      <img src="img/Cartoonku.png" class="align-self-center mt-4" alt="">
+      <h1 class="align-self-center">Hello! My Name is <span> Rizhal </span></h1>
+      <p class="align-self-center mx-5 mt-2 mb-4 text-center fs-5">Saya tinggal di palopo sulawesi selatan tetapi saya lahirnya di makassar ibukota dari provinsi sulawesi selatan, saat ini bekerja sebagai IT Support di sebuah perusahaan di palopo yang jobnya memantau CCTV, menjaga sistem yang dipakai dikantor tetap berjalan dengan semestinya, menangani trouble network, PC, CCTV, dan alat-alat pendukung kinerja karyawan tetap bisa digunakan dengan semestinya dan juga closing data tiap harinya</p>
+      <button type="button" class="btn-modal" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        Contact Me
+      </button>
+      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Contact Me</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="#">
+              <div class="modal-body">
+                <div class="contact-form">
+                  <div class="form-item">
+                    <div class="form-group">
+                      <label class="form-label"for="nama">Nama :</label>
+                      <input class="form-control" type="text" placeholder="Nama" id="nama">
+                    </div>
+                  </div>
+                  <div class="form-item">
+                    <div class="form-group">
+                      <label class="form-label"for="email">Email :</label>
+                      <input class="form-control"type="email" placeholder="Email" id="email">
+                    </div>
+                  </div>
+                  <div class="form-item">
+                    <div class="form-group">
+                      <label class="form-label"for="handphone">No Handphone :</label>
+                      <input class="form-control"type="text" placeholder="No. Handphone" id="handphone">
+                    </div>
+                  </div>
+                  <div class="form-item">
+                    <div class="form-group">
+                      <label class="form-label"for="subject">Subject :</label>
+                      <input class="form-control"type="text" placeholder="subject" id="subject">
+                    </div>
+                  </div>
+                  <div class="form-item">
+                    <div class="form-group">
+                      <label class="form-label"for="message">Pesan :</label>
+                      <textarea class="form-control" name="Message" id="message" rows="10"></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success">Send</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid info d-flex flex-row flex-wrap justify-content-evenly text-center">
+    <div class="info-item">
+      <h2 class="icon-info"><i class="bi bi-phone-fill"></i></h2>
+      <h4 class="info-title">085 340 712 885</h4>
+    </div>
+    <div class="info-item">
+      <h2 class="icon-info"><i class="bi bi-geo-alt-fill"></i></h2>
+      <h4 class="info-title">Jl. Lorem ipsum dolor sit, Palopo</h4>
+    </div>
+    <div class="info-item">
+      <h2 class="icon-info"><i class="bi bi-envelope-fill"></i></h2>
+      <h4 class="info-title">informatika749@gmail.com</h4>
+    </div>
+    <div class="info-item">
+      <h2 class="icon-info"><i class="bi bi-facebook"></i></h2>
+      <h4 class="info-title">Rizhal Ridwan</h4>
+    </div>
+  </div>
+  <div class="container pdpk d-flex flex-wrap justify-content-between mt-5">
+    <div class="card mx-1 mb-5 mx-5">
+      <h5 class="card-header"> <i class="bi bi-person-badge"></i> Personal Data </h5>
+      <div class="card-body">
+        <div class="card-item">
+          <h5>Tempat Lahir</h5>
+          <div class="dubbelepunt">:</div>
+          <p>Makassar</p>
+        </div>
+        <div class="card-item">
+          <h5>Tanggal Lahir</h5>
+          <div class="dubbelepunt">:</div>
+          <p>29 Desember 1992</p>
+        </div>
+        <div class="card-item">
+          <h5>Jenis Kelamin</h5>
+          <div class="dubbelepunt">:</div>
+          <p> Laki-laki </p>
+        </div>
+        <div class="card-item">
+          <h5>Agama</h5>
+          <div class="dubbelepunt">:</div>
+          <p> Islam </p>
+        </div>
+        <div class="card-item">
+          <h5>Status</h5>
+          <div class="dubbelepunt">:</div>
+          <p> Lajang </p>
+        </div>       
+        <div class="card-item">
+          <h5>Pendidikan</h5>
+          <div class="dubbelepunt">:</div>
+          <p>S1, Sistem Informasi</p>
+        </div>
+      </div>
+    </div>
+    <div class="card mx-1 mb-5 mx-5">
+      <h5 class="card-header"> <i class="bi bi-briefcase-fill"></i> Pengalaman Kerja </h5>
+      <div class="card-body">
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-date"> <h5> 2013 - 2015 </h5> </div>
+            <div class="circle-dot"></div>
+            <h4 class="timeline-title">STAFF ADM JUNIOR PABRIK KARET</h4>
+            <p class="timeline-text">PT. Jhonlin Agro Mandiri</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date"> <h5> 2015 - 2016 </h5> </div>
+            <div class="circle-dot"></div>
+            <h4 class="timeline-title">STAFF LABORATORIUM & ASDOS</h4>
+            <p class="timeline-text">AMIK IBNU KHLADUM PALOPO</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date"> <h5> 2016 - 2017 </h5> </div>
+            <div class="circle-dot"></div>
+            <h4 class="timeline-title">STAFF LAB & INSTRUKTUR</h4>
+            <p class="timeline-text">SMART EDUCATION PALOPO</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date"> <h5> 2017 - 2018 </h5> </div>
+            <div class="circle-dot"></div>
+            <h4 class="timeline-title">STAFF ADMINISTRASI</h4>
+            <p class="timeline-text">PT. Pusaka Jaya Internasional</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date"> <h5> 2019 - Sekarang </h5> </div>
+            <div class="circle-dot"></div>
+            <h4 class="timeline-title">STAFF IT SUPPORT</h4>
+            <p class="timeline-text">PT. Sanggar Laut Selatan</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container educations">
+    <div class="card mx-1 mb-5 mx-5">
+      <h5 class="card-header"> <i class="bi bi-pencil-fill"></i> Pendidikan </h5>
+      <div class="card-body education">
+        <div class="timeline-education d-flex flex-row justify-content-between">
+          <div class="timeline-item">
+            <div class="timeline-date text-center"> <h5> 1999 - 2004 </h5> </div>
+            <h4 class="timeline-title text-center">SD</h4>
+            <p class="timeline-text text-center">SD Negeri 75 Surutanga</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date text-center"> <h5> 2004 - 2007 </h5> </div>
+            <h4 class="timeline-title text-center">SMP</h4>
+            <p class="timeline-text text-center">SMP Negeri 7 Palopo</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date text-center"> <h5> 2007 - 2010 </h5> </div>
+            <h4 class="timeline-title text-center">SMA</h4>
+            <p class="timeline-text text-center">SMK Negeri 2 Palopo</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date text-center"> <h5> 2010 - 2013 </h5> </div>
+            <h4 class="timeline-title text-center">D3</h4>
+            <p class="timeline-text text-center">AMIK Ibnu Khaldum Palopo</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date text-center"> <h5> 2015 - 2017 </h5> </div>
+            <h4 class="timeline-title text-center">S1</h4>
+            <p class="timeline-text text-center">STMIK Handayani Makassar</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container nonformal d-flex">
+    <div class="card mx-1 mb-5 mx-5">
+      <h5 class="card-header"> <i class="bi bi-vector-pen"></i> Pendidikan Non Formal </h5>
+      <div class="card-body nonformal">
+        <div class="timeline-nonformal">
+          <div class="timeline-item">
+            <div class="timeline-date">2009</div>
+            <div class="circle-dot"></div>
+            <p class="timeline-text">Pelatihan Manajemen Kepemimpinan Remaja Masjid</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2013</div>
+            <div class="circle-dot"></div>
+            <p class="timeline-text">Pelatihan Kerja, Teknisi Komputer</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2015</div>
+            <div class="circle-dot"></div>
+            <p class="timeline-text">Sertifikasi Profesi, Basic Computer Assembly</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2016</div>
+            <div class="circle-dot"></div>
+            <p class="timeline-text">Pelatihan dan Workshop, VOIP & Rural Longe Range Wireless</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2017</div>
+            <div class="circle-dot"></div>
+            <p class="timeline-text">Workshop Integrasi Antara Aplikasi dan Web Menggunakan MySQL</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2017</div>
+            <div class="circle-dot"></div>
+            <p class="timeline-text">IT Training Profesional, Jaringan Komputer & Sistem Administrasi</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2017</div>
+            <div class="circle-dot"></div>
+            <p class="timeline-text">Pelatihan Android Basic User Interface & User Input</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2020</div>
+            <div class="circle-dot"></div>
+            <p class="timeline-text">Ahli K3 Umum</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2021</div>
+            <div class="circle-dot"></div>
+            <p class="timeline-text">Website Creation</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2022</div>
+            <div class="circle-dot"></div>
+            <p class="timeline-text">Programming Fundamental</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2022</div>
+            <div class="circle-dot"></div>
+            <p class="timeline-text">Menguasai Fundamental Algoritma</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2022</div>
+            <div class="circle-dot"></div>
+            <p class="timeline-text">Mahir Membuat DB Aplikasi Profesional</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="skills mx-5">
+      <h5 class="skill-header"><i class="bi bi-cpu-fill"></i>skills</h5>
+      <div class="skill-body">
+        <div class="skill-item">
+          <img src="img/msoffice.png" alt="">
+          <h4 class="progress-title">Ms. Office</h4>
+          <div class="progress">
+            <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" style="width: 85%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <img src="img/coreldraw.png" alt="">
+          <h4 class="progress-title">CorelDRAW</h4>
+          <div class="progress">
+            <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" style="width: 75%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <img src="img/Photoshop.png" alt="">
+          <h4 class="progress-title">Photoshop</h4>
+          <div class="progress">
+            <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" style="width: 75%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <img src="img/teknisikomputer.png" alt="">
+          <h4 class="progress-title">Teknisi Komputer</h4>
+          <div class="progress">
+            <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" style="width: 85%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <img src="img/networking.png" alt="">
+          <h4 class="progress-title">Networking</h4>
+          <div class="progress">
+            <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" style="width: 75%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <img src="img/webprogramming.png" alt="">
+          <h4 class="progress-title">Web Programming</h4>
+          <div class="progress">
+            <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" style="width: 50%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="container-fluid bg-dark">
+    <p> &copy; Copyright By Izhal 2022</p>
+  </footer>
+
+
+
+
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+ 
+</body>
+</html>

@@ -249,8 +249,6 @@ body{
   border: 1px solid #a0a0a0;
 }
 
-
-
 .contact-form .form-item .form-group input[type=radio]{
   padding: 0;
   width: 2em;
@@ -272,6 +270,8 @@ body{
   width: 100%;
   border: 1px solid #a0a0a0;
   border-radius: 20px;
+  padding: 10px;
+  font-size: large;
 }
 
 .contact-form .form-item .form-group button{

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <h1>Soal 3</h1>
+    <p>buatlah sebuah fungsi untuk mengubah time conversion dari 12 jam menjadi 24 jam. dengan keterangan sebagai berikut :
+    <ul>
+      <li>fungsi tersebut hanya bisa menerima tipe data string</li>
+      <li>kembalian nilai juga harus berupa string</li>
+    </ul>
+    contoh pengujian :
+    
+    <ol>
+      <li>07:05:45PM // 19:05:45</li>
+      <li>02:05:45AM // 02:05:45</li>
+      <li>12:45:00AM // 00:45:00</li>
+    </ol>
+    </p>
+    <p>Masukkan time dengan format jam:menit:detikAM/PM  <br> 
+      contoh: 01:03:00PM</p>
+    <input type="text" id="inputtime">
+    <button type="button" onclick=conversionWaktu()> KLIK </button>
+    <script>
+      
+
+      function conversionWaktu(){
+        let input = document.getElementById("inputtime").value;
+        let inputl = input.toLowerCase();
+        let w24 = inputl.substring(2,inputl.length-2);
+        let pam = inputl.substr(8,2);
+        let j24 = parseInt(inputl.substring(0,2))+12;
+
+        if (pam === "am"){
+          if (j24 === 24){
+            alert("00" + inputl.substring(8,2));
+          } else if (j24 < 24){
+            alert(inputl.substring(0,inputl.length-2))
+          } else {
+            alert("Anda Salah Input Time AM, harus sesuai dengan contoh !!!")
+          }
+        } else if (pam == "pm"){
+          if (j24 === 24){
+            alert(inputl.substring(0,inputl.length-2));
+          } else if (j24 < 24){
+            alert(j24 + w24)
+          } else {
+            alert("Anda Salah Input Time PM, harus sesuai dengan contoh !!!")
+          }
+        } else {
+          alert("Anda Asal Input Time, harus sesuai dengan contoh !!!")
+        }
+      }
+    </script>
+</body>
+</html>

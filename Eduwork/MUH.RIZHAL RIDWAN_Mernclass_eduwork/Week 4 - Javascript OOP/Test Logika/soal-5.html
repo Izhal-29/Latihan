@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <h1>Soal 5</h1>
+    <p>Buatlah sebuah fungsi yang akan menghapus karakter pertama dan karakter terakhir pada sebuah string<br>
+      rules :
+    <ul>
+      <li>Fungsi hanya bisa memproses string</li>
+      <li>jika string kurang dari 3 karakter, maka kembalikan nilai false</li>
+    </ul>
+    contoh pengujian :
+    
+    <ol>
+      <li>deleteChars("Belajar javascript itu menyenangkan sekali") // "elajar javascript itu menyenangkan sekal"</li>
+      <li>deleteChars("Eduwork") // "duwor"</li>
+      <li>deleteChars("yo") // false</li>
+    </ol>
+    </p>
+
+    <p>Masukkan kata atau kalimat</p>
+    <input type="text" id="inputkata">
+    <button type="button" onclick=deleteChars()> KLIK </button>
+    <script>
+      function deleteChars(){
+        let string = /^[a-z A-Z]+$/;
+        let input = document.getElementById("inputkata").value;
+
+        if (!input.match(string)){
+          alert ("Maaf yang anda input bukan string");
+        } else if (input.length < 3){
+          alert ("Maaf string kurang dari 3 karakter");
+        } else {
+          alert(input.substring(1,input.length-1))
+        }
+      }
+    </script>
+</body>
+</html>

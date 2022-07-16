@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <h1>Soal 6</h1>
+    <p>Buatlah sebuah fungsi yang akan mengembalikan jumlah total dari element array yang bernilai positif<br>
+      rules :
+    <ul>
+      <li>fungsi hanya bisa memproses input berupa array of number</li>
+    </ul>
+    contoh pengujian :
+    
+    <ol>
+      <li>sumPositive([1,-4,7,12]) // 20</li>
+      <li>sumPositive([-1,-4,-7,-12]) // 0</li>
+      <li>sumPositive([-1,-4,"7",-12]) // false</li>
+    </ol>
+    </p>
+    <script>
+      let array = [-1,-4,"7",-12];
+      let total = 0;
+
+      function sumPositif(){
+        let ap = array.filter(array => array > 0);
+        if (array.some(array => typeof array == "string")){
+          console.log(false);
+        } else {
+          for(i = 0; i < ap.length; i++){
+            total += ap[i];
+          }
+          console.log(total);
+        }
+      }
+      sumPositif();
+
+    </script>
+</body>
+</html>

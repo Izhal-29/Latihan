@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <h1>Soal 2</h1>
+    <p>palindrome adalah sebuah kata, frasa, angka maupun susunan lainnya yang dapat dibaca dengan sama baik dari depan maupun belakang (spasi antara huruf-huruf biasanya diperbolehkan). seperti katak atau kasurrusak atau kutuk, tiga kata tersebut jika dibalik akan sama saja urutan penulisannya, katak jika dibalik tetap katak, ini yang disebut palindrome<br>
+    buatlah fungsi untuk mengecek apakah kata tersebut termasuk palindrome atau tidak
+    <ul>
+      <li>kembalikan nilai true jika kata tersebut adalah palindrome, dan kembalikan false jika tidak</li>
+      <li>fungsi ini hanya bisa menerima argumen berupa tipe data string, tidak yang lain</li>
+    </ul>
+    contoh pengujian :
+    
+    <ol>
+      <li>"katak" // true</li>
+      <li>"kasurrusak" // true</li>
+      <li>"ketemu" // false</li>
+    </ol>
+    </p>
+
+    <p>Masukkan sebuah kata :</p>
+    <input type="text" id="inputkata">
+    <button type="button" onclick=cek()> KLIK </button>
+    <script>
+      function cek(){
+        let string = /^[a-zA-Z]+$/;
+        let input = document.getElementById("inputkata").value;
+        let inputl = input.toLowerCase();
+        balik = inputl.split('').reverse().join('');
+        console.log(balik);
+        if (!inputl.match(string)){
+          alert ("Maaf yang anda input bukan String !!!");
+        } else if (inputl === balik) {
+          alert (input + " Termasuk palindrome ");
+        } else {
+          alert (input + " Tidak Termasuk palindrome ");
+        }
+      }
+    </script>
+</body>
+</html>

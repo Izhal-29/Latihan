@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scope & Closure</title>
+</head>
+<body>
+  <h1>Scope & Closure</h1>
+
+  <script>
+  // scope --> area yang dibatasi untuk mencari atau melakukan sesuatu
+  // Jenis-Jenis Scope :
+  // - Global Scope : Ruang ingkup variabel yang berada di luar fungsi
+  // - Local Scope : Ruang lingkup variabel yang berada di dalam fungsi
+  // - lexical scope : variabel yang dibuat di dalam outer function yang biasa digunakan di dalam inner function
+  // - Block Scope : Variabel yang dibuat dengan let akan memiiki scope ketika berada pada scope statement
+
+
+    let kelereng = 'merah' // --> global scope
+    
+    function sebuahFunction () { // outher function
+
+      let kelereng = 'kuning'; // --> Local Scope dan jadi lexical scope
+
+        function functionDiDalam () { // Inner function
+          
+          //let kelereng = 'biru'; // --> Local Scope
+          console.log(kelereng); // --> lexical Scope
+        }
+
+        functionDiDalam();
+
+    }
+
+    sebuahFunction();
+
+    // Closure
+    // - Kombinasi antara function dan lexical scope di dalam function tersebut (MDN)
+    // - Sebuah function ketika memiliki akses ke parent scope-nya, meskipun parent scope-nya sudah selesai di eksekusi (w3school)
+    // - Sebuah function dikembalikan oleh function yang lain, yang memiliki akses ke lingkungan saat ia diciptakan (code fellow)
+
+      let kelereng1 = 'merah' // --> global scope
+      
+      function sebuahFunction () { // outher function
+
+        let kelereng1 = 'kuning'; // --> Local Scope dan jadi lexical scope
+
+          return function functionDiDalam () { // Inner function
+            
+            //let kelereng = 'biru'; // --> Local Scope
+            console.log(kelereng1); // --> lexical Scope
+          }
+
+          console.dir(functionDiDalam);
+
+      }
+
+      sebuahFunction();
+
+    // - Sebuah function yang sebelumnya memiliki data hasil dari function lain (techsith)
+    
+
+    // mengetes clousure atau tidak
+    // console.dir(sebuahFunction());
+
+
+    // (Closure) function Factories
+    function salam(waktu){
+      return function(){
+        console.log('halo selamat ' + waktu);
+      }
+    }
+
+    const malam = salam('malam');
+    const siang = salam('siang');
+
+    malam();
+    siang();
+
+
+
+    // (Closure) private method (data yang terlindungi)
+    let nilai = 0;
+    function increment(){
+      return nilai++;
+    }
+
+    nilai = 100;
+    console.log (increment());
+    console.log (increment());
+    console.log (increment());
+    console.log (increment());
+    console.log (increment());
+    console.log (increment());
+
+
+    //private
+    function increment2(){
+      let nilai1 = 0;
+      return function(){
+        return nilai1++;
+      }
+    }
+
+    nilai = 100; // jadi ini ngga ngaruh pada function private method
+    const add = increment2();
+    console.log(add());
+    console.log(add());
+    console.log(add());
+
+  </script>
+</body>
+</html>

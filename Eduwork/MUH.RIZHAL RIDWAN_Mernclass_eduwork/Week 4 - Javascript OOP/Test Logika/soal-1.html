@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <h1>Soal 1</h1>
+    <p>Buatlah sebuah function untuk mengkoversi tahun menjadi abad / century contohnya seperti berikut tahun 1700 adalah abad 17, atau tahun 2010 adalah abad 21 Dengan keterangan sebagai berikut :
+    <ul>
+      <li>fungsi tersebut hanya bisa menerima tipe data number</li>
+      <li>kembalian nilai juga harus berupa number</li>
+    </ul>
+    contoh pengujian :
+    
+    <ol>
+      <li>2010 // output 21</li>
+      <li>1699 // output 17</li>
+      <li>1700 // output 17</li>
+      <li>1 // output 1</li>
+      <li>100 // output 2</li>
+    </ol>
+    </p>
+    <p>Masukkan Tahun Yang akan dikonversi ke abad / century :</p>
+    <input type="text" id="inputtahun">
+    <button type="button" onclick=konversi()> KLIK </button>
+    <script>
+      function konversi(){
+        let vnumber = /^[0-9]+$/;
+        let input = document.getElementById("inputtahun").value;
+        abad = input / 100;
+        if (abad === 1){
+            abad += 1;
+            alert (input + " Abad / Century ke \n " + abad); 
+          } else if (input.match(vnumber)) {
+            alert(input + " Abad / Century ke \n " + Math.ceil(abad));
+          } else {
+            alert ("Maaf yang anda input bukan bertipe data number !!!");
+          }
+      }
+    </script>
+</body>
+</html>

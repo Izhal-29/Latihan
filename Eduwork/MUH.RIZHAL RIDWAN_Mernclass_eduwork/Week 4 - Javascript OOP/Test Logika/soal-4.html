@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <h1>Soal 4</h1>
+    <p>Buatlah sebuah fungsi yang akan membalik urutan kata dari sebuah kalimat.<br>
+      rules :
+    <ul>
+      <li>fungsi hanya bisa memproses string</li>
+      <li>jika string hanya terdiri dari 1 kata, tampilkan kata tersebut</li>
+    </ul>
+    contoh pengujian :
+    
+    <ol>
+      <li>reverseWords("Belajar javascript itu menyenangkan sekali") // "sekali menyenangkan itu javascript Belajar"</li>
+      <li>reverseWords("Eduwork") // "Eduwork"</li>
+      <li>reverseWords("Muhamad Aziz") // "Aziz Muhamad"</li>
+    </ol>
+    </p>
+
+    <p>Masukkan kata atau kalimat</p>
+    <input type="text" id="inputkata">
+    <button type="button" onclick=reverseWords()> KLIK </button>
+    <script>
+      function reverseWords(){
+        let string = /^[a-z A-Z]+$/;
+        let input = document.getElementById("inputkata").value;
+        let balikKalimat = input.split(" ").reverse().join(" ");
+
+        if (!input.match(string)){
+          alert ("Maaf yang anda input bukan string !!!")
+        } else if (input.split(" ").length === 1){
+          alert (input);
+        } else{
+          alert (balikKalimat);
+        }
+      }
+    </script>
+</body>
+</html>

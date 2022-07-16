@@ -25,8 +25,8 @@
     </ol>
     </p>
     <script>
-      let array1 = [1,2,3,4,5];
-      let array2 = [1,2,3,4,5];
+      let array1 = [1,2,3,4,5,7];
+      let array2 = [1,2,3,4,5,6,8];
       let array = [];
 
       function checkArray(){
@@ -38,6 +38,8 @@
           for(i = 0; i < array1.length; i++){
             if(array2.find(item => item == array1[i])){
               array.push()
+            } else if (array.find(item => item == array1[i])){
+              array.push()
             } else {
               array.push(array1[i]); 
             }
@@ -45,6 +47,8 @@
               if (array1[i] !== array2[j]){
                 if(array1.find(item => item == array2[j])){
                   array.push();
+                } else if(array.find(item => item == array2[j])){
+                  array.push()
                 } else {
                   array.push(array2[j]);
                 }
@@ -52,20 +56,10 @@
             }
           }
         }
-        console.log([...new Set(array.sort())]);
+        console.log(array);
       }
       checkArray();
       
     </script>
 </body>
 </html>
-// } else if (array1[i] < i && array2[j] < j){
-            //   console.log("else if 1 = " + array1[i],i,array2[j],j)
-            //   array.push()
-            // } else if (array1[i] > i && array2[j] > j){
-            //   console.log("else if 2 = " + array1[i],i,array2[j],j)
-            //   array.push()
-            // } else {
-            //   array.push(array1[i]);
-            //   array.push(array2[j]);
-            // }

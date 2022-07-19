@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Belajar JS</title>
+</head>
+
+<body>
+  <!-- <script>
+    var s =''; 
+    for (var b = 0; b < 7; b++){
+     for (var c = 0; c <= b; c++){
+      s +='*';
+     }
+      s +='\n';
+    }
+    for (var b = 7; b >= 0; b++){
+     for (var c = 7; c >= b; c--){
+      s +='*';
+     }
+      s +='\n';
+    }
+    console.log(s);
+  </script> -->
+
+
+
+  <!-- <script type="text/javascript">
+    var nama = ['Rizhal', 'Rezha', 'Raya', 'Ridwan', 'Rosmala'];
+    var angka =[1,2,3,4,5,6,7,8,9];
+    nama.forEach(function (n, i){
+      console.log('mahasiswa no ' + (i+1) + ' Bernama ' + n);  
+    })
+  </script> -->
+
+
+  <script src="Angkot7.js"></script>
+  <script src="Angkot8.js"></script>
+
+
+  <!-- <script>
+    var mhs = {
+      nama : "Rizhal",
+      umur : 29,
+      ips :  [2.09, 3.04, 3.50],
+      alamat : {
+        jalan : "Jl. Camar 1 B5 No.2",
+        Kota  : "Palopo",
+        Provinsi : "Sulawesi Selatan"
+      },
+      getData : function(){
+        return "Nama : " + this.nama + "\nUmur : " + this.umur + "\nips : " + this.ips[2] + "\nAlamat : " + this.alamat.jalan;
+      },
+      setData : function(nama){
+        this.nama = nama;
+      }
+    };
+
+    mhs.setData("alex");
+    console.log (mhs.getData());
+  </script> -->
+
+<script>
+  // // ### arguments ---> array yang berisi nilai yang dikirimkan saat fungsi dipanggil (sudo variabel/variabel semu --> variabel yang ada tapi tidak kelihatan) ### Contoh :
+
+    // function tambah(){
+    //   hasil = 0;
+    //   for (i = 0; i < arguments.length; i++){
+    //     hasil += arguments[i];
+    //   } 
+    //   return hasil;
+    // }
+
+    // let coba =  tambah (1,2,3,4,5,6);
+    // console.log(coba);
+
+
+
+  // // ### Refactoring --> sebuah proses mengubah kode agar menjadi lebih 'baik' tanpa mengubah fungsionalitasnya ### 
+
+    // function hitungVolumeKubus (a,b)	{
+    // let volumeA, volumeB;
+    // 		volumeA = a * a * a;
+    // 		volumeB = b * b * b;
+    // 		total = volumeA + volumeB;
+    // return total;
+    // }
+
+    // alert('volume kubus pertama ' + hitungVolumeKubus(8,3));
+    // alert('volume kubus kedua ' + hitungVolumeKubus(10,5));
+
+    // // Setelah di refactoring:
+    // function hitungVolumeKubus (a,b)	{
+    //   return a * a * a + b * b * b;
+    // }
+
+    // alert('volume kubus pertama ' + hitungVolumeKubus(8,3));
+    // alert('volume kubus kedua ' + hitungVolumeKubus(10,5));
+
+
+
+  // ### Scope ###
+    // Block Scope & Function Scope
+    // Block Scope ---> variabel hanya bisa digunakan dalam 1 block atau yang hanya berada pada kurung kurawal{} seperti bahasa C
+    // Function Scope ---> global scope / windows scope istilahnya variabel dalam function (variabel local) tidak dapat di akses di luar dari function tetapi variabel diluar dari function (variabel Global) dapat diakses didalam function dan diluar function.
+
+    // let a = 5; //variabel global
+    // function tes(){
+    //   let a = 10; //variabel local
+    //   console.log(a)// yang diambil variabel local
+    // }
+
+    // tes(); // yang tampil => 10
+
+    // console.log(a)// yang tampil variabel global => 5
+
+
+
+  // ### Rekursif ###
+    // rekursif --> fungsi yang memanggil dirinya sendiri jadi melakukan sesuatu berulang" sperti halnya looping
+
+    // // bentuk looping meggunakan for
+    // for (let i = 10; i >= 1; i--){
+    //   console.log(i);
+    // }
+
+    // // bentuk looping rekursif
+    // function tampilAngka(n){
+
+    //   //tambahkan base case biar tidak looping forever agar rekursifnya bisa berhenti
+    //   if (n === 0){
+    //     return;
+    //   } 
+
+    //   console.log(n);
+    //   return tampilAngka(n-1);
+    // }
+
+    // tampilAngka(10);
+
+
+    // function factorial(n){
+    //   if (n === 0){ 
+    //     return 1;
+    //   } else {
+    //     return n * factorial(n-1);
+    //   }
+    // }
+
+    // console.log(factorial(5));
+
+    // ilustrasi kerjanya :
+    // fakctorial(5)
+    // 5 * faktorial (4)
+    // 5 * (4 * faktorial (3))
+    // 5 * (4 * (3 * faktorial (2)))
+    // 5 * (4 * (3 * (2 * faktorial (1))))
+    // 5 * (4 * (3 * 2))
+    // 5 * (4 * 6)
+    // 5 * 24
+    // 120
+
+
+
+  // ### declaration vs expression ###
+  // * function declaration :
+    // function indentifier (parameter-->opt) { functionbody }
+    // - lebih fleksibel (dapat ditulis dimanapun/posisi pemanggilnya bisa sebelum atau sesudah pembuatan function) karena konsep Hoisting ()
+    // - lebih mudah dipahami pemula
+
+    // tampilPesan1 ('izhal');
+    // function tampilPesan1(nama){
+    //   alert('halo ' + nama);
+    // }
+    // tampilPesan1 ('izhal');
+
+
+  // * function expression :
+    // nama variabel = function identifier-->opt (parammeter-->opt) { functionbody }
+    // - Harus didefenisikan terlebih dahulu sebelum dipanggil functionnya / posisi pemanggilnya harus sesudah pembuatan functionnya
+    // - lebih powerfull:
+    //   Sebagai Closure
+    //   Sebagai argumen untuk function lain
+    //   IIFE(Immediately Invoked Function Expression)
+
+    
+    // let tampilPesan2 = function (nama){
+    //   alert('halo ' + nama);
+    // }
+    // tampilPesan2 ('izhal')
+
+
+
+  // ### Array ###
+  // tipe data yang digunakan untuk mendeskripsikan kumpulan elemen (nilai / variabel), yang tiap-tiap elemennya memiliki index. (variabel yang lebih sakti karena bisa menampung nilai lebih dari satu.)
+    // - mempermudah pengelolan nilai / value / data (penelusuran dan pencarian)
+    // - Manajemen Memory
+  // * Karakteristik Array :
+    // - Variabel jamak, yang mempunyai banyak elemen dan diacu dengan nama yang sama
+    // - Kumpulan pasangan key dan nilai / key and value pair
+    // - key adalah index pada array dengan tipe integer yang dimulai dari 0
+    // - array pada javascript bertipe data object
+    // - array pada javascript memiliki fungsi / method length untuk menghitung jumlah elemen di dalamnya
+    // - elemen pada array boleh memiliki tipe data yang berbeda
+  
+  // * Method Array :
+      // let arr= ['Rizhal', 'Rezha', 'Raya', 'Ridwan', 'Rosmala']; // length - forEach
+      // 1. Length -> untuk mengetahui berapa jumlah elemen pada array
+      // 2. Join -> menggabungkan seluruh isi array dan mengubahnya menjadi sebuah string
+        // console.log(arr.join());
+        // console.log(arr.join('-'));
+        // console.log(arr.join(' '));
+
+      // 3. push -> menambah elemen array diakhir arraynya
+        // arr.push('ridwan','rosmala');
+        // console.log(arr)
+
+      // 4. pop -> Menghapus elemen array diakhir array
+        // arr.pop();
+        // arr.pop();
+        // console.log(arr);
+
+      // 5. shift -> Menghapus elemen diawal array
+        // arr.shift();
+        // arr.shift();
+        // console.log(arr);
+
+      // 6. unshift -> Menambahkan elemen baru diawal array
+        // arr.unshift('rosmala', 'dian')
+        // console.log(arr);
+
+      // 7. slice -> mengiris array / ketika kita ingin mengambil beberapa bagian pada array untuk menjadi array yang baru tapi array yang lama tidak terhapus masih bisa dipakai
+          // slice (index awal, index akhir) -> mau diiris mulai dari index keberapa lalu akhirnya mau berapa, index awal akan terbawa ke index baru tapi index akhir ngga
+          // arr2 = arr.slice(1,3);
+          // console.log(arr.join(' - ')); //array lama
+          // console.log(arr2.join(' - ')); // array baru
+
+      // 8. splice -> menyambung/menambal/menyisipkan sebuah elemen ditengah" array
+          // splice (indexAwal, mauDihapusBerapa, elemnBaru1, elemenbaru2, ...)
+          // arr.splice(2,0, 'ridwan','rosmala')
+          // console.log(arr);
+          // arr.splice(1,2, 'ridwan','rosmala')
+          // console.log(arr.join(' - '));
+
+      // 9. forEach -> looping pada array
+          // let angka = [1,2,3,4,5,6,7,8,9];
+          // // untuk setiap elemen yang ada pada array angka lakukan fungsi berikut ini
+          // angka.forEach(function(e){
+          //   console.log(e);
+          // })
+
+          // // atau
+          
+          // let cetak = function(e){
+          //   console.log(e);
+          // }
+
+          // angka.forEach(cetak);
+
+          // untuk menampilkan nomor indexnya :
+          // arr.forEach(function(e,i){ // i mengacu ke indexnya, e mengacu pada element arr
+          //   console.log('Mahasiswa ke- ' + (i+1) + ' adalah : ' + e);
+          // })
+
+      // 10. map -> looping pada array dan mengembalikan array sesuai dengan keinginan
+          // let angka = [1,2,3,4,5,6,7,8,4];
+
+          // //seluruh element akan dikalikan dengan 2 lalu simpan kedalam variabel angka2
+          // let angka2 = angka.map(function(e){
+          //   return e * 2;
+          // });
+
+          // console.log (angka.join(' - '));
+          // console.log (angka2.join(' - '));
+
+      // 11. sort -> mengurutkan data array
+        // let angka = [1,2,5,3,6,8,4];
+        // angka.sort();
+
+        // console.log(angka)
+
+        // let angka2 = [1,2,10,5,20,3,6,8,4];
+        // // kita harus menambahkan function perbandingan angkanya agar urutannya benar
+        // angka2.sort(function(a,b){
+        //   return a-b;
+        // });
+
+        // console.log(angka2)
+
+
+      // 12. filter -> mencari element pada array dan dapat mengembalikan banyak nilai dalam bentuk array
+        // let angka = [1,2,10,5,20,3,6,8,4];
+
+        // let angka2 = angka.filter(function(x){
+        //   return x > 5;
+        // })
+
+        // console.log(angka2.join(' - '))
+
+      // 13. find -> mencari element pada array dan mengembalikan 1 nilai
+        // let angka = [1,2,10,5,20,3,6,8,4];
+
+        // let angka2 = angka.find(function(x){
+        //   return x > 5;
+        // })
+        
+        // console.log(angka2)
+
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/array
+
+
+  // ### object ###
+  // kumpulan nilai, yang memiliki nama bukan index
+    // let mahasiswa = {
+    //   nama :'rizhal',
+    //   lulus : true,
+    //   IPSemester : [2.90, 3.10, 3.25, 2.88, 3.04],
+    //   alamat : {
+    //     jalan : "jl. kaswari 1 No.82",
+    //     kota : "banjamasin",
+    //     provinsi : 'Kalimantan Selatan'
+    //   },
+    //   IPKumulatif : function(){
+    //     let total = 0;
+    //     let ips = this.IPSemester
+    //     for (let i = 0; i < ips.length; i++){
+    //       total += ips[i];
+    //     }
+    //     return total/ips.length;
+    //   }
+    // }
+
+    // console.log(mahasiswa);
+
+    // * Anatomi Object
+
+        // let Orang ={
+        //   nama : 'rizhal', // properti
+        //   umur : 30, // properti
+        //   pekerjaan : 'IT Support', // properti
+        //   sapa : function (){ // Method
+        //     return 'hi, Nama saya ' + this.nama + ' usia saya ' + this.umur + ' Tahun, dan saya adalah seorang ' + this.pekerjaan;
+        //   }
+        // }
+
+        // console.log(Orang.sapa());
+
+    // * Membuat Object :
+      // - Object Literal
+          //  let mhs1 = {
+          //     nama :'rizhal',
+          //     nrp : 76652436,
+          //     email : 'rizhal@gmail.com',
+          //     jurusan : 'sistem informasi'
+          //  }
+
+          //  let mhs2 = {
+          //     nama :'doddy',
+          //     nrp : 7665566,
+          //     email : 'doddy@gmail.com',
+          //     jurusan : 'teknik informasi'
+          //  }
+      
+      // - Function Declaration
+          //  function buatObectMahasiswa(nama, nrp, email, jurusan){
+          //   let mhs = {};
+          //     mhs.nama = nama;
+          //     mhs.nrp = nrp;
+          //     mhs.email = email;
+          //     mhs.jurusan = jurusan;
+          //   return mhs;
+          //  }
+
+          //  let mhs3 = buatObectMahasiswa('Nofarizha','878474674','nofa@gmail.com','teknik pangan');
+          //  let mhs4 = buatObectMahasiswa('ridwan','63535373','ridwan@gmail.com','teknik listrik');
+
+      // - Constructor Function (Keyword new)
+          //  function Mahasiswa(nama, nrp, email, jurusan){
+          //     this.nama = nama;
+          //     this.nrps = nrp;
+          //     this.email = email;
+          //     this.jurusan = jurusan;
+          //  }
+
+          //  let mhs5 = new Mahasiswa('erik','08378383','erik@gmail.com','teknik mesin');
+          //  let mhs6 = new Mahasiswa('doyan','08677788','doyan@gmail.com','teknik elektrik');
+
+      // - Object.create()
+
+    // * this --> adalah sebuah keyword spesial yang secara otomatis itu didefenisikan pada setiap  function/object.
+    // console.log(this) // hasilnya object global
+    // console.log(window) // hasilnya object global
+
+
+    // 1. Function Declaration
+        // function halo(){
+        //   console.log('halo Declaration');
+        //   console.log(this);
+        // }
+
+        // this.halo();
+        // // this mengembalikan object global
+
+    // 2. Object Literal
+        // let obj = {a : 10, nama : 'rizhal'};
+        // obj.halo = function (){
+        //   console.log('halo Object Literal');
+        //   console.log(this);
+        // } 
+
+        // obj.halo();
+        // // this mengembalikan object yang bersangkutan
+
+    // 3. Constructor
+      //   function Halo (){
+      //     console.log(this);
+      //     console.log('halo Constructor');
+      //   }
+
+      //  let obj1 = new Halo();
+      //  let obj2 = new Halo();
+      // //  this mengembalikan object yang baru dibuat
+
+
+// </script>
+
+</body>
+
+</html>

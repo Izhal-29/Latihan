@@ -21,11 +21,18 @@
       <li>sumPositive([-1,-4,"7",-12]) // false</li>
     </ol>
     </p>
-    <script>
-      let array = [-1,-4,"7",-12];
-      let total = 0;
+
+    <p>Masukkan angka berapapun dipisah dengan koma, string menggunakan (" ")</p>
+    <!-- <input type="text" id="inputarray">
+    <button type="button" onclick=sumPositif()> KLIK </button> -->
+    <script>     
 
       function sumPositif(){
+        let array = [-1,-4,"7",-12];
+        let total = 0;
+        // let inputArray = document.getElementById("inputarray").value;
+        // let arr = parseInt(inputArray.split('').map(Number).filter(item => item !== ','));
+
         let ap = array.filter(array => array > 0);
         if (array.some(array => typeof array == "string")){
           console.log(false);

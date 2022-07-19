@@ -1,4 +1,4 @@
-var angkot = 1,
+let angkot = 1,
 	jmlAngkot = 10;
 
 while (angkot <= jmlAngkot) {

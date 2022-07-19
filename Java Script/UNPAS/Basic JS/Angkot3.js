@@ -1,6 +1,6 @@
-var jmlAngkot = 10,
-  angkotBeroperasi = 6;
-for (var angkot = 1; angkot <= jmlAngkot; angkot++) {
+let jmlAngkot = 10;
+let angkotBeroperasi = 6;
+for (let angkot = 1; angkot <= jmlAngkot; angkot++) {
   if (angkot <= angkotBeroperasi) {
     console.log('Angkot No. ' + angkot + ' beroperasi dengan baik.')
   } else {

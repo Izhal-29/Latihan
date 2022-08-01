@@ -1,0 +1,64 @@
+/* Global */
+body{
+    margin: 0px;
+    font-family: "Avenir Next";
+    background-color: #212529;
+
+    
+}
+
+
+/*END Global */
+
+
+
+/* Navbar Styling */
+.judulnav{
+    font-size: 24px;
+    font-family: "Roboto";
+}
+
+
+.category{
+    margin-left: 50px;
+    font-size: 19px;
+    font-family: "roboto";
+}
+
+.dropmenu{
+    margin-left: 50px;
+    font-family: "roboto";
+    text-align: center;
+    position: relative;
+    background-image:linear-gradient(#0909b9 , #e6880f);;
+}
+
+.dropmenu li :hover{
+    background-color:#cbccacb0;
+  }
+
+  .dropmenu li :active{
+    background-color:#8c8e0ab0;
+  }
+
+
+  .caribtn:hover{
+    background-color: #1714be8c;
+    color: rgba(12, 99, 199, 0.267);
+}
+.caribtn:active{
+    background-color: #1714be8c;
+    color: rgba(12, 99, 199, 0.267);
+}
+
+  /*END Navbar Styling */
+
+
+
+  .footer {
+    font-size: 20px;
+    font-family: "Roboto";
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }

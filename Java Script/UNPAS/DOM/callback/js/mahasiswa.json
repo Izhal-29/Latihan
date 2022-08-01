@@ -1,0 +1,23 @@
+[
+  {
+    "nama" : "Rizhal Ridwan",
+    "nrp" : "043040023",
+    "email" : "izhal@gmail.com",
+    "jurusan" : "Teknik Informatika",
+    "idDosenWali" : 1
+  },
+  {
+    "nama" : "Doddy Ferdiansyah",
+    "nrp" : "133040123",
+    "email" : "doddy@gmail.com",
+    "jurusan" : "Teknik Informatika",
+    "idDosenWali" : 2
+  },
+  {
+    "nama" : "Erik",
+    "nrp" : "104040001",
+    "email" : "erik@gmail.com",
+    "jurusan" : "Teknik Industri",
+    "idDosenWali" : 2
+  }
+]

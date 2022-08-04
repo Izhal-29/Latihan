@@ -1275,7 +1275,7 @@ Literals adalah konsep regex yang paling sederhana dimana kita membuat regex ses
 
 ##### test()
 
-Javascript regex punya beberapa built-in methods untuk Regex. Sala satunya adalah test(). test() mengembalikan nilai BOOLEAN (TRUE/FALSE) untuk kecocokan sebuat text yang dicari.
+Javascript regex punya beberapa built-in methods untuk Regex. Salah satunya adalah test(). test() mengembalikan nilai BOOLEAN (TRUE/FALSE) untuk kecocokan sebuat text yang dicari.
 
 ```javascript
 let regex1 = new RegExp('monkeys');

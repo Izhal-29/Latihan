@@ -23,3 +23,30 @@
 .caption{
   background-color: black;
 }
+
+.hl{
+  background-color: salmon;
+}
+
+body{
+  background-color: salmon;
+  text-align: center;
+}
+
+.namaku{
+  font-family: arial;
+  font-size: 80px;
+  color: white;
+}
+
+.namaku span{
+  /* displaynya dirubah agar bisa ter transform karena display defaultnya span itu inline */
+  display: inline-block;
+  transition: .3s ease;
+  margin-right: 15px;
+}
+
+.namaku span:hover{
+  cursor: pointer;
+  transform: scale(2) translateY(-20px);
+}
